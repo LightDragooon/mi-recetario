@@ -27,10 +27,6 @@
             color: var(--text-color);
             margin: 0;
             padding: 24px;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
         }
         
         body.modal-open {
@@ -39,7 +35,8 @@
 
         .container {
             width: 100%;
-            max-width: 800px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         header {
@@ -60,6 +57,127 @@
             color: #7f8c8d;
         }
         
+        /* View Switcher */
+        .view-switcher {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            background-color: var(--card-bg);
+            border-radius: 50px;
+            padding: 5px;
+            box-shadow: var(--shadow);
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .view-switcher button {
+            padding: 10px 25px;
+            border: none;
+            background-color: transparent;
+            color: var(--text-color);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .view-switcher button.active {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+        }
+
+        .view { display: none; }
+        .view.active { display: block; }
+        
+        /* Planner View */
+        #plannerView {
+            display: none;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+            align-items: flex-start;
+        }
+        #plannerView.active {
+            display: grid;
+        }
+        
+        #recipeLibrary {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow);
+            height: 80vh;
+            overflow-y: auto;
+        }
+        #recipeLibrary h2 {
+            margin-top: 0; text-align: center; color: var(--header-color);
+        }
+        #recipeSearch {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 2px solid var(--border-color);
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .recipe-card-lib {
+            padding: 15px;
+            background-color: var(--bg-color);
+            border-radius: 12px;
+            margin-bottom: 10px;
+            cursor: grab;
+            border-left: 5px solid var(--primary-color);
+        }
+        .recipe-card-lib h4 { margin: 0 0 5px 0; }
+        .recipe-card-lib p { margin: 0; font-size: 0.8rem; color: #7f8c8d; }
+
+        #plannerCalendar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        .calendar-day {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+        .calendar-day-header {
+            padding: 10px;
+            font-weight: 700;
+            text-align: center;
+            background-color: var(--header-color);
+            color: white;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+        .meal-slot {
+            padding: 10px;
+            min-height: 100px;
+            border-top: 1px solid var(--border-color);
+        }
+        .meal-slot.drag-over {
+            background-color: #e8f8f5;
+        }
+        .meal-slot .recipe-card-lib {
+            cursor: default;
+        }
+        .meal-slot h5 {
+            margin: 0 0 10px 0;
+            color: var(--secondary-color);
+        }
+        
+        @media (max-width: 900px) {
+            #plannerView {
+                grid-template-columns: 1fr;
+            }
+            #recipeLibrary {
+                height: auto;
+                max-height: 40vh;
+            }
+        }
+        
+
+        /* --- STYLES FOR THE "VIEW PLANS" MODE --- */
         .selectors-container {
             display: flex;
             flex-direction: column;
@@ -67,422 +185,68 @@
             margin-bottom: 30px;
             align-items: center;
         }
+        .top-controls { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center; }
+        .portion-selector { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+        #portionSelectorInput { width: 60px; padding: 8px; border-radius: 8px; border: 2px solid var(--border-color); text-align: center; font-weight: 600; }
+        .action-buttons { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .action-btn { padding: 10px 20px; background: var(--secondary-color); color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+        .action-btn:hover { background: #2980b9; box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3); }
+        #planSelector { padding: 10px 15px; border-radius: 8px; border: 2px solid var(--border-color); font-weight: 600; background-color: white; min-width: 250px; cursor: pointer; }
+        .day-selector { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
+        .day-selector button { padding: 10px 20px; border: 2px solid var(--border-color); background-color: var(--card-bg); color: var(--text-color); border-radius: 50px; cursor: pointer; font-weight: 600; font-size: 0.9rem; transition: all 0.3s ease; }
+        .day-selector button:hover { background-color: var(--primary-color); color: white; border-color: var(--primary-color); }
+        .day-selector button.active { background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; border-color: var(--primary-color); box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3); }
+        .week-grid { display: grid; justify-items: center; position: relative; min-height: 100px; }
+        .loader { border: 4px solid var(--border-color); border-top: 4px solid var(--primary-color); border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .day-card { background: var(--card-bg); border-radius: var(--border-radius); box-shadow: var(--shadow); overflow: hidden; width: 100%; max-width: 500px; }
+        .day-header { padding: 16px 20px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; font-weight: 700; font-size: 1.25rem; text-align: center; }
+        .meal { padding: 20px; border-bottom: 1px solid var(--border-color); cursor: pointer; }
+        .meal:last-child { border-bottom: none; }
+        .meal-header { display: flex; justify-content: space-between; align-items: center; }
+        .meal-header h3 { margin: 0; font-size: 1.1rem; color: var(--header-color); font-weight: 600; }
+        .meal-header span { font-size: 0.9rem; color: #95a5a6; text-align: right; }
+        .meal-header .toggle-icon { transition: transform 0.3s ease; font-weight: bold; margin-left: 10px; }
+        .meal.active .toggle-icon { transform: rotate(180deg); }
+        .recipe-details { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
+        .recipe-details.show { max-height: 2500px; transition: max-height 0.8s ease-in; }
+        .recipe-content { padding-top: 20px; display: grid; grid-template-columns: 1fr; gap: 20px; }
+        @media (min-width: 600px) { .recipe-content { grid-template-columns: 1fr 1fr; } }
+        .info-card, .chart-card, .details-section { background-color: var(--bg-color); padding: 16px; border-radius: 12px; border: 1px solid var(--border-color); }
+        .details-section { grid-column: 1 / -1; }
+        .chart-container { position: relative; height: 200px; width: 100%; }
+        .details-section h4, .info-card h4, .chart-card h4 { margin-top: 0; color: var(--secondary-color); border-bottom: 2px solid var(--primary-color); padding-bottom: 8px; margin-bottom: 12px; }
+        .info-card p { margin: 0; line-height: 1.6; }
+        .info-card strong { color: var(--header-color); }
+        .details-section ul, .details-section ol { padding-left: 20px; margin: 0; }
+        .details-section li { margin-bottom: 8px; line-height: 1.6; }
+        .shopping-list-btn { display: block; width: calc(100% - 40px); margin: 20px; padding: 12px; background: linear-gradient(135deg, #1abc9c, #16a085); color: white; border: none; border-radius: 10px; font-weight: 600; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; }
+        .shopping-list-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(22, 160, 133, 0.3); }
 
-        .top-controls {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .portion-selector {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-        }
-
-        #portionSelectorInput {
-            width: 60px;
-            padding: 8px;
-            border-radius: 8px;
-            border: 2px solid var(--border-color);
-            text-align: center;
-            font-weight: 600;
-        }
-        
-        .action-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .action-btn {
-            padding: 10px 20px;
-            background: var(--secondary-color);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .action-btn:hover {
-            background: #2980b9;
-            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
-        }
-
-        #planSelector {
-            padding: 10px 15px;
-            border-radius: 8px;
-            border: 2px solid var(--border-color);
-            font-weight: 600;
-            background-color: white;
-            min-width: 250px;
-            cursor: pointer;
-        }
-
-        .day-selector {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .day-selector button {
-            padding: 10px 20px;
-            border: 2px solid var(--border-color);
-            background-color: var(--card-bg);
-            color: var(--text-color);
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .day-selector button:hover {
-            background-color: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-        }
-
-        .day-selector button.active {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            border-color: var(--primary-color);
-            box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
-        }
-
-        .week-grid {
-            display: grid;
-            justify-items: center;
-            position: relative;
-            min-height: 100px;
-        }
-        
-        .loader {
-            border: 4px solid var(--border-color);
-            border-top: 4px solid var(--primary-color);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .day-card {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            width: 100%;
-            max-width: 500px;
-        }
-        
-        .day-header {
-            padding: 16px 20px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            font-weight: 700;
-            font-size: 1.25rem;
-            text-align: center;
-        }
-
-        .meal {
-            padding: 20px;
-            border-bottom: 1px solid var(--border-color);
-            cursor: pointer;
-        }
-        
-        .meal:last-child {
-            border-bottom: none;
-        }
-
-        .meal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .meal-header h3 {
-            margin: 0;
-            font-size: 1.1rem;
-            color: var(--header-color);
-            font-weight: 600;
-        }
-        
-        .meal-header span {
-            font-size: 0.9rem;
-            color: #95a5a6;
-            text-align: right;
-        }
-        
-        .meal-header .toggle-icon {
-            transition: transform 0.3s ease;
-            font-weight: bold;
-            margin-left: 10px;
-        }
-
-        .meal.active .toggle-icon {
-            transform: rotate(180deg);
-        }
-
-        .recipe-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out;
-        }
-
-        .recipe-details.show {
-            max-height: 2500px; 
-            transition: max-height 0.8s ease-in;
-        }
-
-        .recipe-content {
-            padding-top: 20px;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        @media (min-width: 600px) {
-            .recipe-content {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        
-        .info-card, .chart-card, .details-section {
-            background-color: var(--bg-color);
-            padding: 16px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
-        
-        .details-section {
-            grid-column: 1 / -1;
-        }
-        
-        .chart-container {
-            position: relative;
-            height: 200px;
-            width: 100%;
-        }
-
-        .details-section h4, .info-card h4, .chart-card h4 {
-            margin-top: 0;
-            color: var(--secondary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 8px;
-            margin-bottom: 12px;
-        }
-        
-        .info-card p {
-            margin: 0;
-            line-height: 1.6;
-        }
-        .info-card strong {
-             color: var(--header-color);
-        }
-        
-        .details-section ul, .details-section ol {
-            padding-left: 20px;
-            margin: 0;
-        }
-        .details-section li {
-            margin-bottom: 8px;
-            line-height: 1.6;
-        }
-
-        .shopping-list-btn {
-            display: block;
-            width: calc(100% - 40px);
-            margin: 20px;
-            padding: 12px;
-            background: linear-gradient(135deg, #1abc9c, #16a085);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .shopping-list-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(22, 160, 133, 0.3);
-        }
-
-        /* Modal Styles */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-            z-index: 1000;
-        }
-
-        .modal-overlay.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-content {
-            background-color: white;
-            padding: 30px;
-            border-radius: var(--border-radius);
-            width: 90%;
-            max-width: 600px;
-            max-height: 80vh;
-            overflow-y: auto;
-            transform: translateY(-50px);
-            transition: transform 0.3s ease;
-        }
-
-        .modal-overlay.show .modal-content {
-            transform: translateY(0);
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-        }
-
-        .modal-header h2 {
-            margin: 0;
-            color: var(--header-color);
-        }
-
-        .close-modal {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #95a5a6;
-        }
-        
-        .modal-options {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .modal-options .include-check {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            font-size: 0.9rem;
-        }
-        
-        .modal-options input {
-            cursor: pointer;
-        }
-
-        .modal-actions {
-            display: flex;
-            gap: 10px;
-        }
-        .modal-actions button {
-             padding: 8px 12px;
-             font-size: 0.8rem;
-             border-radius: 6px;
-        }
-
-        .shopping-list-category h3, .prep-step h3 {
-            color: var(--primary-color);
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        .shopping-list-category ul {
-            list-style: none;
-            padding: 0;
-        }
-        .shopping-list-category li {
-            display: flex;
-            align-items: center;
-            padding: 8px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .shopping-list-category input[type="checkbox"] {
-            margin-right: 12px;
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-        }
-        .shopping-list-category label {
-             flex-grow: 1;
-        }
-        .shopping-list-category label.checked {
-            text-decoration: line-through;
-            color: #bdc3c7;
-        }
-        
-        .prep-step {
-            padding-bottom: 15px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .prep-step:last-child {
-            border-bottom: none;
-        }
-        .prep-step p {
-            margin: 5px 0;
-        }
-        .prep-step strong {
-            color: var(--header-color);
-        }
-
-        @media print {
-            body * {
-                visibility: hidden;
-            }
-            .modal-overlay, .modal-overlay * {
-                visibility: visible;
-            }
-            .modal-overlay {
-                position: absolute;
-                left: 0;
-                top: 0;
-                background-color: white;
-                height: auto;
-                overflow: visible;
-            }
-            .modal-content {
-                box-shadow: none;
-                border: none;
-                width: 100%;
-                max-width: 100%;
-                max-height: none;
-                padding: 0;
-            }
-            .modal-header, .modal-options, .modal-actions, .shopping-list-category input {
-                display: none;
-            }
-             .shopping-list-category label.checked {
-                text-decoration: none;
-                color: var(--text-color);
-            }
-        }
+        /* --- MODAL STYLES --- */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); display: flex; justify-content: center; align-items: center; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; z-index: 1000; }
+        .modal-overlay.show { opacity: 1; visibility: visible; }
+        .modal-content { background-color: white; padding: 30px; border-radius: var(--border-radius); width: 90%; max-width: 600px; max-height: 80vh; overflow-y: auto; transform: translateY(-50px); transition: transform 0.3s ease; }
+        .modal-overlay.show .modal-content { transform: translateY(0); }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; margin-bottom: 20px; }
+        .modal-header h2 { margin: 0; color: var(--header-color); }
+        .close-modal { background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #95a5a6; }
+        .modal-options { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .modal-options .include-check { display: flex; gap: 10px; align-items: center; font-size: 0.9rem; }
+        .modal-options input { cursor: pointer; }
+        .modal-actions { display: flex; gap: 10px; }
+        .modal-actions button { padding: 8px 12px; font-size: 0.8rem; border-radius: 6px; }
+        .shopping-list-category h3, .prep-step h3 { color: var(--primary-color); margin-top: 20px; margin-bottom: 10px; }
+        .shopping-list-category ul { list-style: none; padding: 0; }
+        .shopping-list-category li { display: flex; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border-color); }
+        .shopping-list-category input[type="checkbox"] { margin-right: 12px; width: 18px; height: 18px; cursor: pointer; }
+        .shopping-list-category label { flex-grow: 1; }
+        .shopping-list-category label.checked { text-decoration: line-through; color: #bdc3c7; }
+        .prep-step { padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px solid var(--border-color); }
+        .prep-step:last-child { border-bottom: none; }
+        .prep-step p { margin: 5px 0; }
+        .prep-step strong { color: var(--header-color); }
+        @media print { body * { visibility: hidden; } .modal-overlay, .modal-overlay * { visibility: visible; } .modal-overlay { position: absolute; left: 0; top: 0; background-color: white; height: auto; overflow: visible; } .modal-content { box-shadow: none; border: none; width: 100%; max-width: 100%; max-height: none; padding: 0; } .modal-header, .modal-options, .modal-actions, .shopping-list-category input { display: none; } .shopping-list-category label.checked { text-decoration: none; color: var(--text-color); } }
 
     </style>
 </head>
@@ -494,27 +258,47 @@
         <p>Un plan divertido y creativo por NutriGema ✨</p>
     </header>
 
-    <div class="selectors-container">
-        <div class="top-controls">
-            <select id="planSelector" aria-label="Seleccionar Plan Semanal"></select>
-            <div class="portion-selector">
-                <label for="portionSelectorInput">Personas:</label>
-                <input type="number" id="portionSelectorInput" value="1" min="1">
-            </div>
-        </div>
-        <div class="action-buttons">
-            <button id="weeklyShopBtn" class="action-btn">🛒 Lista Semanal</button>
-            <button id="mealPrepBtn" class="action-btn">🍳 Plan de Preparación</button>
-        </div>
-        <div class="day-selector" id="daySelector"></div>
+    <div class="view-switcher">
+        <button id="viewPlansBtn" class="active">Ver Planes</button>
+        <button id="createPlanBtn">Crear Mi Plan</button>
     </div>
 
-    <div class="week-grid" id="weekGrid">
-        <div class="loader" id="loader"></div>
+    <!-- VIEW 1: PREDEFINED PLANS -->
+    <div id="viewPlansView" class="view active">
+        <div class="selectors-container">
+            <div class="top-controls">
+                <select id="planSelector" aria-label="Seleccionar Plan Semanal"></select>
+                <div class="portion-selector">
+                    <label for="portionSelectorInput">Personas:</label>
+                    <input type="number" id="portionSelectorInput" value="1" min="1">
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button id="weeklyShopBtn" class="action-btn">🛒 Lista Semanal</button>
+                <button id="mealPrepBtn" class="action-btn">🍳 Plan de Preparación</button>
+            </div>
+            <div class="day-selector" id="daySelector"></div>
+        </div>
+        <div class="week-grid" id="weekGrid">
+            <div class="loader" id="loader"></div>
+        </div>
     </div>
+
+    <!-- VIEW 2: DRAG & DROP PLANNER -->
+    <div id="plannerView" class="view">
+        <div id="recipeLibrary">
+            <h2>Biblioteca de Recetas</h2>
+            <input type="text" id="recipeSearch" placeholder="Buscar recetas...">
+            <div id="recipeLibraryContent"></div>
+        </div>
+        <div id="plannerCalendar">
+            <!-- Calendar will be generated by JS -->
+        </div>
+    </div>
+
 </div>
 
-<!-- Shopping List Modal -->
+<!-- Modals remain the same -->
 <div class="modal-overlay" id="shoppingListModal">
     <div class="modal-content">
         <div class="modal-header">
@@ -531,22 +315,16 @@
                 <button id="copyBtn" class="action-btn">📋 Copiar</button>
             </div>
         </div>
-        <div id="shoppingListContent">
-            <!-- Shopping list will be injected here -->
-        </div>
+        <div id="shoppingListContent"></div>
     </div>
 </div>
-
-<!-- Meal Prep Modal -->
 <div class="modal-overlay" id="mealPrepModal">
     <div class="modal-content">
         <div class="modal-header">
             <h2>Plan de Preparación Semanal</h2>
             <button class="close-modal" data-modal-id="mealPrepModal">&times;</button>
         </div>
-        <div id="mealPrepContent">
-            <!-- Meal prep plan will be injected here -->
-        </div>
+        <div id="mealPrepContent"></div>
     </div>
 </div>
 
@@ -555,6 +333,7 @@
     let BD_RECETAS = {};
     let PLANES_SEMANALES = {};
     let portionMultiplier = 1;
+    let customPlan = {}; // For the drag & drop planner
     
     // Asynchronous data loading
     async function initializeApp() {
@@ -563,37 +342,102 @@
                 fetch('./data/BD_RECETAS.json'),
                 fetch('./data/PLANES_SEMANALES.json')
             ]);
-
-            if (!recipesRes.ok || !plansRes.ok) {
-                throw new Error('Network response was not ok');
-            }
-
             BD_RECETAS = await recipesRes.json();
             PLANES_SEMANALES = await plansRes.json();
             
             document.getElementById('loader').style.display = 'none';
-
+            
+            setupViewSwitcher();
+            
+            // Setup for "View Plans" mode
             const daysOfWeek = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
             const today = new Date().getDay();
             const currentDayIndex = (today === 0) ? 6 : today - 1; 
             const currentDayKey = daysOfWeek[currentDayIndex];
-            
             createPlanSelector();
             createDaySelector(daysOfWeek, currentDayKey);
             displayDay(currentDayKey);
+            
+            // Setup for "Create Plan" mode
+            populateRecipeLibrary();
+            createPlannerCalendar(daysOfWeek);
+            loadCustomPlan();
+            
+            // General setup
             setupModalListeners();
             setupActionButtons();
             setupPortionSelector();
 
         } catch (error) {
             console.error("Error loading data:", error);
-            document.getElementById('loader').style.display = 'none';
-            document.getElementById('weekGrid').innerHTML = `<p style="text-align:center; color: #c0392b;">Error al cargar los datos. Por favor, intente de nuevo más tarde.</p>`;
+            const loader = document.getElementById('loader');
+            if(loader) loader.style.display = 'none';
+            document.getElementById('weekGrid').innerHTML = `<p style="text-align:center; color: #c0392b;">Error al cargar los datos.</p>`;
         }
     }
 
     document.addEventListener('DOMContentLoaded', initializeApp);
+    
+    // --- BUG FIXES & SMALL IMPROVEMENTS ---
+    function gcd(a, b) {
+        return b === 0 ? a : gcd(b, a % b);
+    }
 
+    function formatIngredientQuantity(ing, multiplier) {
+        const quantityStr = ing.cantidad;
+        const fractionMatch = quantityStr.match(/(\d+)\/(\d+)/);
+        const numberMatch = quantityStr.match(/(\d*\.?\d+)/);
+
+        if (fractionMatch) {
+            let numerator = parseInt(fractionMatch[1], 10) * multiplier;
+            let denominator = parseInt(fractionMatch[2], 10);
+            
+            if (numerator >= denominator) {
+                const wholePart = Math.floor(numerator / denominator);
+                numerator %= denominator;
+                if (numerator === 0) return `${wholePart} ${quantityStr.split(' ').slice(1).join(' ')}`;
+                return `${wholePart} ${numerator}/${denominator} ${quantityStr.split(' ').slice(1).join(' ')}`;
+            }
+            
+            const commonDivisor = gcd(numerator, denominator);
+            numerator /= commonDivisor;
+            denominator /= commonDivisor;
+
+            if (denominator === 1) return `${numerator} ${quantityStr.split(' ').slice(1).join(' ')}`;
+            return `${numerator}/${denominator} ${quantityStr.split(' ').slice(1).join(' ')}`;
+
+        } else if (numberMatch) {
+            const originalAmount = parseFloat(numberMatch[0]);
+            const newAmount = originalAmount * multiplier;
+            const finalAmount = newAmount % 1 === 0 ? newAmount : parseFloat(newAmount.toFixed(2));
+            return quantityStr.replace(originalAmount, finalAmount);
+        }
+        return quantityStr;
+    }
+
+    // --- VIEW SWITCHER LOGIC ---
+    function setupViewSwitcher() {
+        const viewPlansBtn = document.getElementById('viewPlansBtn');
+        const createPlanBtn = document.getElementById('createPlanBtn');
+        const viewPlansView = document.getElementById('viewPlansView');
+        const plannerView = document.getElementById('plannerView');
+
+        viewPlansBtn.addEventListener('click', () => {
+            viewPlansBtn.classList.add('active');
+            createPlanBtn.classList.remove('active');
+            viewPlansView.classList.add('active');
+            plannerView.classList.remove('active');
+        });
+
+        createPlanBtn.addEventListener('click', () => {
+            createPlanBtn.classList.add('active');
+            viewPlansBtn.classList.remove('active');
+            plannerView.classList.add('active');
+            viewPlansView.classList.remove('active');
+        });
+    }
+
+    // --- PREDEFINED PLAN LOGIC (VIEW 1) ---
     function createPlanSelector() {
         const planSelector = document.getElementById('planSelector');
         PLANES_SEMANALES.planesSemanales.forEach((plan, index) => {
@@ -602,7 +446,6 @@
             option.textContent = plan.nombrePlan;
             planSelector.appendChild(option);
         });
-
         planSelector.addEventListener('change', () => {
             const activeDay = document.querySelector('.day-selector button.active').dataset.day;
             displayDay(activeDay);
@@ -611,14 +454,12 @@
 
     function createDaySelector(days, currentDayKey) {
         const daySelector = document.getElementById('daySelector');
-        daySelector.innerHTML = ''; // Clear previous buttons
+        daySelector.innerHTML = '';
         days.forEach(day => {
             const dayBtn = document.createElement('button');
             dayBtn.textContent = day.charAt(0).toUpperCase() + day.slice(1);
             dayBtn.dataset.day = day;
-            if (day === currentDayKey) {
-                dayBtn.classList.add('active');
-            }
+            if (day === currentDayKey) dayBtn.classList.add('active');
             dayBtn.addEventListener('click', () => {
                 document.querySelector('.day-selector button.active').classList.remove('active');
                 dayBtn.classList.add('active');
@@ -631,51 +472,34 @@
     function displayDay(day) {
         const weekGrid = document.getElementById('weekGrid');
         weekGrid.innerHTML = ''; 
-
-        const planSelector = document.getElementById('planSelector');
-        const selectedPlanIndex = planSelector.value;
+        const selectedPlanIndex = document.getElementById('planSelector').value;
         const plan = PLANES_SEMANALES.planesSemanales[selectedPlanIndex].planSemanal;
         const dayKey = day.charAt(0).toUpperCase() + day.slice(1);
-        
         const dayCard = document.createElement('div');
         dayCard.className = 'day-card';
         dayCard.innerHTML = `<div class="day-header">${dayKey}</div>`;
-
-        const meals = ['almuerzo', 'cena'];
-        meals.forEach(mealType => {
+        ['almuerzo', 'cena'].forEach(mealType => {
             const recipeId = plan[day][mealType];
             const recipe = BD_RECETAS.recetas.find(r => r.id === recipeId);
-            if (recipe) {
-                dayCard.appendChild(createMealElement(recipe, mealType));
-            }
+            if (recipe) dayCard.appendChild(createMealElement(recipe, mealType));
         });
-        
         const shoppingListBtn = document.createElement('button');
         shoppingListBtn.className = 'shopping-list-btn';
         shoppingListBtn.textContent = '🛒 Generar Lista de Compras del Día';
-        shoppingListBtn.onclick = () => showShoppingList(day);
+        shoppingListBtn.onclick = () => showShoppingList({day: day});
         dayCard.appendChild(shoppingListBtn);
-
         weekGrid.appendChild(dayCard);
         addEventListeners();
-    }
-    
-    function formatIngredientQuantity(ing, multiplier) {
-        // Find the first number in the quantity string
-        const match = ing.cantidad.match(/(\d*\.?\d+)/);
-        if (match) {
-            const originalAmount = parseFloat(match[1]);
-            const newAmount = originalAmount * multiplier;
-            const finalAmount = newAmount % 1 === 0 ? newAmount : newAmount.toFixed(2).replace(/\.00$/, '');
-            return ing.cantidad.replace(originalAmount, finalAmount);
-        }
-        return ing.cantidad; // Fallback if no number is found
     }
 
     function createMealElement(recipe, mealType) {
         const mealElement = document.createElement('div');
         mealElement.className = 'meal';
         mealElement.dataset.recipeId = recipe.id;
+        
+        const optionalIngredientsHTML = recipe.ingredientesOpcionales && recipe.ingredientesOpcionales.length > 0
+            ? `<h6>Ingredientes Opcionales</h6><ul>${recipe.ingredientesOpcionales.map(ing => `<li><strong>${ing.nombre}:</strong> ${formatIngredientQuantity(ing, portionMultiplier)}</li>`).join('')}</ul>`
+            : '';
 
         mealElement.innerHTML = `
             <div class="meal-header">
@@ -687,89 +511,135 @@
             </div>
             <div class="recipe-details">
                 <div class="recipe-content">
-                    <div class="info-card">
-                        <h4>Información General</h4>
-                        <p><strong>Tiempo:</strong> ${recipe.tiempoPreparacionAproximado}</p>
-                        <p><strong>Dificultad:</strong> ${recipe.dificultad}</p>
-                        <p><strong>Calorías:</strong> ${(recipe.resumenNutricional.caloriasTotales * portionMultiplier).toFixed(0)} kcal</p>
-                    </div>
-                    <div class="chart-card">
-                        <h4>Macros (P/G/C)</h4>
-                        <div class="chart-container">
-                            <canvas id="chart-${recipe.id}-${mealType}"></canvas>
-                        </div>
-                    </div>
-                    <div class="details-section">
-                        <h4>Ingredientes</h4>
-                        <ul>
-                            ${recipe.ingredientes.map(ing => `<li><strong>${ing.nombre}:</strong> ${formatIngredientQuantity(ing, portionMultiplier)}</li>`).join('')}
-                        </ul>
-                    </div>
-                    <div class="details-section">
-                        <h4>Instrucciones</h4>
-                        <ol>
-                            ${recipe.instrucciones.map(step => `<li>${step}</li>`).join('')}
-                        </ol>
-                    </div>
-                    <div class="details-section">
-                        <h4>Consejos del Chef ✨</h4>
-                        <ul>
-                            ${recipe.consejosDelChef.map(tip => `<li>${tip}</li>`).join('')}
-                        </ul>
-                    </div>
+                    <div class="info-card"><h4>Información General</h4><p><strong>Tiempo:</strong> ${recipe.tiempoPreparacionAproximado}</p><p><strong>Dificultad:</strong> ${recipe.dificultad}</p><p><strong>Calorías:</strong> ${(recipe.resumenNutricional.caloriasTotales * portionMultiplier).toFixed(0)} kcal</p></div>
+                    <div class="chart-card"><h4>Macros (P/G/C)</h4><div class="chart-container"><canvas id="chart-${recipe.id}-${mealType}"></canvas></div></div>
+                    <div class="details-section"><h4>Ingredientes</h4><ul>${recipe.ingredientes.map(ing => `<li><strong>${ing.nombre}:</strong> ${formatIngredientQuantity(ing, portionMultiplier)}</li>`).join('')}</ul>${optionalIngredientsHTML}</div>
+                    <div class="details-section"><h4>Instrucciones</h4><ol>${recipe.instrucciones.map(step => `<li>${step}</li>`).join('')}</ol></div>
+                    <div class="details-section"><h4>Consejos del Chef ✨</h4><ul>${recipe.consejosDelChef.map(tip => `<li>${tip}</li>`).join('')}</ul></div>
                 </div>
             </div>
         `;
         return mealElement;
     }
+    
+    // --- DRAG & DROP PLANNER LOGIC (VIEW 2) ---
+    function populateRecipeLibrary() {
+        const libraryContent = document.getElementById('recipeLibraryContent');
+        libraryContent.innerHTML = '';
+        BD_RECETAS.recetas.forEach(recipe => {
+            const card = document.createElement('div');
+            card.className = 'recipe-card-lib';
+            card.draggable = true;
+            card.dataset.recipeId = recipe.id;
+            card.innerHTML = `<h4>${recipe.nombre}</h4><p>${recipe.tipoDeComida} - ${recipe.dificultad}</p>`;
+            libraryContent.appendChild(card);
+            card.addEventListener('dragstart', handleDragStart);
+        });
 
-    function createMacroChart(canvasId, macros) {
-        const ctx = document.getElementById(canvasId).getContext('2d');
-        if (window.chartInstances && window.chartInstances[canvasId]) {
-            window.chartInstances[canvasId].destroy();
-        }
-        
-        if(!window.chartInstances) {
-            window.chartInstances = {};
-        }
+        document.getElementById('recipeSearch').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            libraryContent.querySelectorAll('.recipe-card-lib').forEach(card => {
+                const name = card.querySelector('h4').textContent.toLowerCase();
+                card.style.display = name.includes(searchTerm) ? 'block' : 'none';
+            });
+        });
+    }
 
-        window.chartInstances[canvasId] = new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Proteínas (g)', 'Grasas (g)', 'Carbohidratos (g)'],
-                datasets: [{
-                    label: 'Macronutrientes',
-                    data: [
-                        (macros.proteinasTotales * portionMultiplier).toFixed(1), 
-                        (macros.grasasTotales * portionMultiplier).toFixed(1), 
-                        (macros.carbohidratosTotales * portionMultiplier).toFixed(1)
-                    ],
-                    backgroundColor: [
-                        'rgba(46, 204, 113, 0.8)',
-                        'rgba(241, 196, 15, 0.8)',
-                        'rgba(52, 152, 219, 0.8)'
-                    ],
-                    borderColor: [
-                        'rgba(46, 204, 113, 1)',
-                        'rgba(241, 196, 15, 1)',
-                        'rgba(52, 152, 219, 1)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: { boxWidth: 12, font: { size: 10 } }
-                    }
+    function createPlannerCalendar(days) {
+        const calendar = document.getElementById('plannerCalendar');
+        calendar.innerHTML = '';
+        days.forEach(day => {
+            const dayEl = document.createElement('div');
+            dayEl.className = 'calendar-day';
+            dayEl.innerHTML = `<div class="calendar-day-header">${day.charAt(0).toUpperCase() + day.slice(1)}</div>`;
+            ['almuerzo', 'cena'].forEach(meal => {
+                const slot = document.createElement('div');
+                slot.className = 'meal-slot';
+                slot.dataset.day = day;
+                slot.dataset.meal = meal;
+                slot.innerHTML = `<h5>${meal.charAt(0).toUpperCase() + meal.slice(1)}</h5>`;
+                slot.addEventListener('dragover', handleDragOver);
+                slot.addEventListener('dragleave', handleDragLeave);
+                slot.addEventListener('drop', handleDrop);
+                dayEl.appendChild(slot);
+            });
+            calendar.appendChild(dayEl);
+        });
+    }
+    
+    function renderCustomPlan() {
+        const slots = document.querySelectorAll('.meal-slot');
+        slots.forEach(slot => {
+            // Clear previous recipe card
+            const oldCard = slot.querySelector('.recipe-card-lib');
+            if(oldCard) oldCard.remove();
+            
+            const day = slot.dataset.day;
+            const meal = slot.dataset.meal;
+            if(customPlan[day] && customPlan[day][meal]) {
+                const recipeId = customPlan[day][meal];
+                const recipe = BD_RECETAS.recetas.find(r => r.id === recipeId);
+                if(recipe) {
+                    const card = document.createElement('div');
+                    card.className = 'recipe-card-lib';
+                    card.innerHTML = `<h4>${recipe.nombre}</h4><p>${recipe.tipoDeComida} - ${recipe.dificultad}</p>`;
+                    slot.appendChild(card);
                 }
             }
         });
     }
 
+    function handleDragStart(e) {
+        e.dataTransfer.setData('text/plain', e.target.dataset.recipeId);
+    }
+    function handleDragOver(e) {
+        e.preventDefault();
+        e.currentTarget.classList.add('drag-over');
+    }
+    function handleDragLeave(e) {
+        e.currentTarget.classList.remove('drag-over');
+    }
+    function handleDrop(e) {
+        e.preventDefault();
+        e.currentTarget.classList.remove('drag-over');
+        const recipeId = e.dataTransfer.getData('text/plain');
+        const day = e.currentTarget.dataset.day;
+        const meal = e.currentTarget.dataset.meal;
+
+        if (!customPlan[day]) {
+            customPlan[day] = {};
+        }
+        customPlan[day][meal] = recipeId;
+        
+        saveCustomPlan();
+        renderCustomPlan();
+    }
+
+    function saveCustomPlan() {
+        localStorage.setItem('customMealPlan', JSON.stringify(customPlan));
+    }
+    function loadCustomPlan() {
+        const savedPlan = localStorage.getItem('customMealPlan');
+        if (savedPlan) {
+            customPlan = JSON.parse(savedPlan);
+            renderCustomPlan();
+        } else {
+            // Initialize with an empty plan structure
+            const daysOfWeek = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
+            daysOfWeek.forEach(day => customPlan[day] = { almuerzo: null, cena: null });
+        }
+    }
+
+
+    // --- GENERAL LOGIC & EVENT LISTENERS ---
+    function createMacroChart(canvasId, macros) {
+        const ctx = document.getElementById(canvasId).getContext('2d');
+        if (window.chartInstances && window.chartInstances[canvasId]) {
+            window.chartInstances[canvasId].destroy();
+        }
+        if(!window.chartInstances) window.chartInstances = {};
+        window.chartInstances[canvasId] = new Chart(ctx, { type: 'doughnut', data: { labels: ['Proteínas (g)', 'Grasas (g)', 'Carbohidratos (g)'], datasets: [{ label: 'Macronutrientes', data: [ (macros.proteinasTotales * portionMultiplier), (macros.grasasTotales * portionMultiplier), (macros.carbohidratosTotales * portionMultiplier) ], backgroundColor: ['rgba(46, 204, 113, 0.8)','rgba(241, 196, 15, 0.8)','rgba(52, 152, 219, 0.8)'], borderColor: ['rgba(46, 204, 113, 1)','rgba(241, 196, 15, 1)','rgba(52, 152, 219, 1)'], borderWidth: 1 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } } } } });
+    }
 
     function addEventListeners() {
         document.querySelectorAll('.meal').forEach(mealEl => {
@@ -777,16 +647,12 @@
                 mealEl.classList.toggle('active');
                 const details = mealEl.querySelector('.recipe-details');
                 details.classList.toggle('show');
-                
                 const recipeId = mealEl.dataset.recipeId;
                 const mealType = mealEl.querySelector('h3').textContent.toLowerCase();
                 const canvasId = `chart-${recipeId}-${mealType}`;
-
                 if (details.classList.contains('show')) {
                     const recipe = BD_RECETAS.recetas.find(r => r.id === recipeId);
-                    setTimeout(() => {
-                        createMacroChart(canvasId, recipe.resumenNutricional);
-                    }, 50);
+                    setTimeout(() => createMacroChart(canvasId, recipe.resumenNutricional), 50);
                 } else {
                     if (window.chartInstances && window.chartInstances[canvasId]) {
                         window.chartInstances[canvasId].destroy();
@@ -797,12 +663,10 @@
         });
     }
     
-    // --- Logic for new features ---
-
     function generateShoppingList(recipeIds, includeOptionals) {
         const ingredientsToProcess = [];
-
         recipeIds.forEach(id => {
+            if (!id) return;
             const recipe = BD_RECETAS.recetas.find(r => r.id === id);
             if (recipe) {
                 ingredientsToProcess.push(...recipe.ingredientes);
@@ -811,27 +675,18 @@
                 }
             }
         });
-        
         const consolidated = {};
         ingredientsToProcess.forEach(ing => {
             const key = `${ing.nombre}_${ing.unidadMetrica}`;
             if (!consolidated[key]) {
-                consolidated[key] = {
-                    nombre: ing.nombre,
-                    cantidad: 0,
-                    unidad: ing.unidadMetrica,
-                    categoria: ing.categoria || 'Otros'
-                };
+                consolidated[key] = { nombre: ing.nombre, cantidad: 0, unidad: ing.unidadMetrica, categoria: ing.categoria || 'Otros' };
             }
             consolidated[key].cantidad += (ing.cantidadMetrica * portionMultiplier);
         });
-
         const categorized = {};
         for (const key in consolidated) {
             const item = consolidated[key];
-            if (!categorized[item.categoria]) {
-                categorized[item.categoria] = [];
-            }
+            if (!categorized[item.categoria]) categorized[item.categoria] = [];
             categorized[item.categoria].push(item);
         }
         return categorized;
@@ -841,12 +696,10 @@
         const contentDiv = document.getElementById('shoppingListContent');
         contentDiv.innerHTML = '';
         const sortedCategories = Object.keys(categorizedList).sort();
-
         if (sortedCategories.length === 0) {
-            contentDiv.innerHTML = '<p>No hay ingredientes para mostrar.</p>';
+            contentDiv.innerHTML = '<p>No hay ingredientes para mostrar. Arrastra recetas a tu plan para empezar.</p>';
             return;
         }
-
         sortedCategories.forEach(category => {
             const categoryDiv = document.createElement('div');
             categoryDiv.className = 'shopping-list-category';
@@ -873,9 +726,12 @@
         });
     }
 
-    function showShoppingList(day) {
-        const plan = PLANES_SEMANALES.planesSemanales[document.getElementById('planSelector').value].planSemanal;
-        const recipeIds = [plan[day].almuerzo, plan[day].cena];
+    function showShoppingList(options) {
+        const { day, isWeekly = false, planSource } = options;
+        const recipeIds = isWeekly 
+            ? Object.values(planSource).flatMap(d => Object.values(d))
+            : [planSource[day].almuerzo, planSource[day].cena];
+        
         const modal = document.getElementById('shoppingListModal');
         const includeOptionalsCheckbox = document.getElementById('includeOptionals');
         
@@ -883,62 +739,35 @@
             const list = generateShoppingList(recipeIds, includeOptionalsCheckbox.checked);
             displayShoppingList(list);
         }
-
         updateList();
         includeOptionalsCheckbox.onchange = updateList;
-        
-        document.getElementById('modalTitle').textContent = `Lista de Compras - ${day.charAt(0).toUpperCase() + day.slice(1)}`;
-        modal.classList.add('show');
-        document.body.classList.add('modal-open');
-    }
-
-    function showWeeklyShoppingList() {
-        const plan = PLANES_SEMANALES.planesSemanales[document.getElementById('planSelector').value].planSemanal;
-        const allRecipeIds = Object.values(plan).flatMap(day => Object.values(day));
-        const modal = document.getElementById('shoppingListModal');
-        const includeOptionalsCheckbox = document.getElementById('includeOptionals');
-
-        function updateList() {
-            const list = generateShoppingList(allRecipeIds, includeOptionalsCheckbox.checked);
-            displayShoppingList(list);
-        }
-
-        updateList();
-        includeOptionalsCheckbox.onchange = updateList;
-
-        document.getElementById('modalTitle').textContent = `Lista de Compras Semanal`;
+        document.getElementById('modalTitle').textContent = isWeekly ? 'Lista de Compras Semanal' : `Lista de Compras - ${day.charAt(0).toUpperCase() + day.slice(1)}`;
         modal.classList.add('show');
         document.body.classList.add('modal-open');
     }
 
     function showMealPrepPlan() {
-        const planData = PLANES_SEMANALES.planesSemanales[document.getElementById('planSelector').value];
+        const planData = document.getElementById('viewPlansBtn').classList.contains('active')
+            ? PLANES_SEMANALES.planesSemanales[document.getElementById('planSelector').value]
+            : { planDePreparacionSemanal: { pasosDePrepa: [ { descripcion: "El plan de preparación se basa en planes predefinidos.", componente: "N/A", recetasRelacionadas: [], instruccionesAlmacenamiento: "Crea un plan y luego genera una lista de preparación."} ] } };
+        
         const mealPrepPlan = planData.planDePreparacionSemanal;
         const modal = document.getElementById('mealPrepModal');
         const contentDiv = document.getElementById('mealPrepContent');
         contentDiv.innerHTML = '';
-
         if (mealPrepPlan && mealPrepPlan.pasosDePrepa) {
             mealPrepPlan.pasosDePrepa.forEach(step => {
                 const stepDiv = document.createElement('div');
                 stepDiv.className = 'prep-step';
-                const recipeNames = step.recetasRelacionadas
-                    .map(id => BD_RECETAS.recetas.find(r => r.id === id)?.nombre)
-                    .filter(Boolean) // Filter out any undefined if id not found
-                    .join(', ');
-
-                stepDiv.innerHTML = `
-                    <h3>${step.descripcion}</h3>
-                    <p><strong>Componente:</strong> ${step.componente}</p>
-                    <p><strong>Recetas:</strong> ${recipeNames || 'N/A'}</p>
-                    <p><strong>Almacenamiento:</strong> ${step.instruccionesAlmacenamiento}</p>
-                `;
+                const recipeNames = step.recetasRelacionadas[0] === 'todas'
+                    ? "Todas las recetas de la semana"
+                    : step.recetasRelacionadas.map(id => BD_RECETAS.recetas.find(r => r.id === id)?.nombre).filter(Boolean).join(', ');
+                stepDiv.innerHTML = `<h3>${step.descripcion}</h3><p><strong>Componente:</strong> ${step.componente}</p><p><strong>Recetas:</strong> ${recipeNames || 'N/A'}</p><p><strong>Almacenamiento:</strong> ${step.instruccionesAlmacenamiento}</p>`;
                 contentDiv.appendChild(stepDiv);
             });
         } else {
             contentDiv.innerHTML = '<p>No hay plan de preparación disponible para esta semana.</p>';
         }
-
         modal.classList.add('show');
         document.body.classList.add('modal-open');
     }
@@ -947,28 +776,26 @@
         document.querySelectorAll('.modal-overlay').forEach(modal => {
             const closeModalBtn = modal.querySelector('.close-modal');
             const modalId = closeModalBtn.dataset.modalId;
-
-            function closeModal() {
-                document.getElementById(modalId).classList.remove('show');
-                document.body.classList.remove('modal-open');
-            }
-
+            function closeModal() { document.getElementById(modalId).classList.remove('show'); document.body.classList.remove('modal-open'); }
             closeModalBtn.addEventListener('click', closeModal);
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    closeModal();
-                }
-            });
+            modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
         });
-
-        // Setup modal action buttons
         document.getElementById('printBtn').addEventListener('click', () => window.print());
         document.getElementById('copyBtn').addEventListener('click', copyShoppingListToClipboard);
     }
     
     function setupActionButtons() {
-        document.getElementById('weeklyShopBtn').addEventListener('click', showWeeklyShoppingList);
-        document.getElementById('mealPrepBtn').addEventListener('click', showMealPrepPlan);
+        const weeklyShopBtn = document.getElementById('weeklyShopBtn');
+        const mealPrepBtn = document.getElementById('mealPrepBtn');
+        
+        weeklyShopBtn.addEventListener('click', () => {
+             const isPredefinedView = document.getElementById('viewPlansBtn').classList.contains('active');
+             const planSource = isPredefinedView
+                ? PLANES_SEMANALES.planesSemanales[document.getElementById('planSelector').value].planSemanal
+                : customPlan;
+             showShoppingList({ isWeekly: true, planSource: planSource });
+        });
+        mealPrepBtn.addEventListener('click', showMealPrepPlan);
     }
     
     function setupPortionSelector() {
@@ -978,9 +805,9 @@
             if (value >= 1) {
                 portionMultiplier = value;
                 const activeDay = document.querySelector('.day-selector button.active').dataset.day;
-                displayDay(activeDay); // Re-render the day with the new multiplier
+                displayDay(activeDay);
             } else {
-                portionInput.value = 1; // Reset if value is invalid
+                portionInput.value = 1;
             }
         });
     }
@@ -988,23 +815,17 @@
     function copyShoppingListToClipboard() {
         const contentDiv = document.getElementById('shoppingListContent');
         let textToCopy = `${document.getElementById('modalTitle').textContent}\n\n`;
-        
         contentDiv.querySelectorAll('.shopping-list-category').forEach(category => {
             const title = category.querySelector('h3').textContent;
             textToCopy += `--- ${title.toUpperCase()} ---\n`;
-            category.querySelectorAll('li label').forEach(label => {
-                textToCopy += `- ${label.textContent}\n`;
-            });
+            category.querySelectorAll('li label').forEach(label => { textToCopy += `- ${label.textContent}\n`; });
             textToCopy += '\n';
         });
-
         navigator.clipboard.writeText(textToCopy).then(() => {
             const copyBtn = document.getElementById('copyBtn');
             const originalText = copyBtn.textContent;
             copyBtn.textContent = '¡Copiado!';
-            setTimeout(() => {
-                copyBtn.textContent = originalText;
-            }, 2000);
+            setTimeout(() => { copyBtn.textContent = originalText; }, 2000);
         }).catch(err => {
             console.error('Error al copiar la lista: ', err);
             alert('No se pudo copiar la lista.');
