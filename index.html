@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visor de Plan Semanal - NutriGema</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --primary-color: #2ecc71;
+            --secondary-color: #3498db;
+            --text-color: #34495e;
+            --header-color: #2c3e50;
+            --border-color: #e9ecef;
+            --shadow: 0 10px 20px rgba(0,0,0,0.05);
+            --border-radius: 16px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 24px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-family: 'Pacifico', cursive;
+            color: var(--primary-color);
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+        }
+        
+        .selectors-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+
+        #planSelector {
+            padding: 10px 15px;
+            border-radius: 8px;
+            border: 2px solid var(--border-color);
+            font-weight: 600;
+            background-color: white;
+            min-width: 250px;
+            cursor: pointer;
+        }
+
+        .day-selector {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .day-selector button {
+            padding: 10px 20px;
+            border: 2px solid var(--border-color);
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .day-selector button:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .day-selector button.active {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+        }
+
+        .week-grid {
+            display: grid;
+            justify-items: center;
+            position: relative;
+            min-height: 100px;
+        }
+        
+        .loader {
+            border: 4px solid var(--border-color);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .day-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        .day-header {
+            padding: 16px 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem;
+            text-align: center;
+        }
+
+        .meal {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+        }
+        
+        .meal:last-child {
+            border-bottom: none;
+        }
+
+        .meal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .meal-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--header-color);
+            font-weight: 600;
+        }
+        
+        .meal-header span {
+            font-size: 0.9rem;
+            color: #95a5a6;
+            text-align: right;
+        }
+        
+        .meal-header .toggle-icon {
+            transition: transform 0.3s ease;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .meal.active .toggle-icon {
+            transform: rotate(180deg);
+        }
+
+        .recipe-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+
+        .recipe-details.show {
+            max-height: 2500px; 
+            transition: max-height 0.8s ease-in;
+        }
+
+        .recipe-content {
+            padding-top: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 600px) {
+            .recipe-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .info-card, .chart-card, .details-section {
+            background-color: var(--bg-color);
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .details-section {
+            grid-column: 1 / -1;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 200px;
+            width: 100%;
+        }
+
+        .details-section h4, .info-card h4, .chart-card h4 {
+            margin-top: 0;
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .info-card p {
+            margin: 0;
+            line-height: 1.6;
+        }
+        .info-card strong {
+             color: var(--header-color);
+        }
+        
+        .details-section ul, .details-section ol {
+            padding-left: 20px;
+            margin: 0;
+        }
+        .details-section li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        .shopping-list-btn {
+            display: block;
+            width: calc(100% - 40px);
+            margin: 20px;
+            padding: 12px;
+            background: linear-gradient(135deg, #1abc9c, #16a085);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .shopping-list-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(22, 160, 133, 0.3);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Mi Plan Semanal</h1>
+        <p>Un plan divertido y creativo por NutriGema ✨</p>
+    </header>
+
+    <div class="selectors-container">
+        <select id="planSelector" aria-label="Seleccionar Plan Semanal"></select>
+        <div class="day-selector" id="daySelector"></div>
+    </div>
+
+    <div class="week-grid" id="weekGrid">
+        <div class="loader" id="loader"></div>
+    </div>
+</div>
+
+<script>
+    let BD_RECETAS = {};
+    let PLANES_SEMANALES = {};
+    
+    // Asynchronous data loading
+    async function initializeApp() {
+        try {
+            const [recipesRes, plansRes] = await Promise.all([
+                fetch('./data/BD_RECETAS.json'),
+                fetch('./data/PLANES_SEMANALES.json')
+            ]);
+
+            if (!recipesRes.ok || !plansRes.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            BD_RECETAS = await recipesRes.json();
+            PLANES_SEMANALES = await plansRes.json();
+            
+            document.getElementById('loader').style.display = 'none';
+
+            const daysOfWeek = ['lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado', 'domingo'];
+            const today = new Date().getDay();
+            const currentDayIndex = (today === 0) ? 6 : today - 1; 
+            const currentDayKey = daysOfWeek[currentDayIndex];
+            
+            createPlanSelector();
+            createDaySelector(daysOfWeek, currentDayKey);
+            displayDay(currentDayKey);
+
+        } catch (error) {
+            console.error("Error loading data:", error);
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('weekGrid').innerHTML = `<p style="text-align:center; color: #c0392b;">Error al cargar los datos. Por favor, intente de nuevo más tarde.</p>`;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', initializeApp);
+
+    function createPlanSelector() {
+        const planSelector = document.getElementById('planSelector');
+        PLANES_SEMANALES.planesSemanales.forEach((plan, index) => {
+            const option = document.createElement('option');
+            option.value = index;
+            option.textContent = plan.nombrePlan;
+            planSelector.appendChild(option);
+        });
+
+        planSelector.addEventListener('change', () => {
+            const activeDay = document.querySelector('.day-selector button.active').dataset.day;
+            displayDay(activeDay);
+        });
+    }
+
+    function createDaySelector(days, currentDayKey) {
+        const daySelector = document.getElementById('daySelector');
+        daySelector.innerHTML = ''; // Clear previous buttons
+        days.forEach(day => {
+            const dayBtn = document.createElement('button');
+            dayBtn.textContent = day.charAt(0).toUpperCase() + day.slice(1);
+            dayBtn.dataset.day = day;
+            if (day === currentDayKey) {
+                dayBtn.classList.add('active');
+            }
+            dayBtn.addEventListener('click', () => {
+                document.querySelector('.day-selector button.active').classList.remove('active');
+                dayBtn.classList.add('active');
+                displayDay(day);
+            });
+            daySelector.appendChild(dayBtn);
+        });
+    }
+
+    function displayDay(day) {
+        const weekGrid = document.getElementById('weekGrid');
+        weekGrid.innerHTML = ''; 
+
+        const planSelector = document.getElementById('planSelector');
+        const selectedPlanIndex = planSelector.value;
+        const plan = PLANES_SEMANALES.planesSemanales[selectedPlanIndex].planSemanal;
+        const dayKey = day.charAt(0).toUpperCase() + day.slice(1);
+        
+        const dayCard = document.createElement('div');
+        dayCard.className = 'day-card';
+        dayCard.innerHTML = `<div class="day-header">${dayKey}</div>`;
+
+        const meals = ['almuerzo', 'cena'];
+        meals.forEach(mealType => {
+            const recipeId = plan[day][mealType];
+            const recipe = BD_RECETAS.recetas.find(r => r.id === recipeId);
+            if (recipe) {
+                dayCard.appendChild(createMealElement(recipe, mealType));
+            }
+        });
+        
+        const shoppingListBtn = document.createElement('button');
+        shoppingListBtn.className = 'shopping-list-btn';
+        shoppingListBtn.textContent = '🛒 Generar Lista de Compras del Día';
+        shoppingListBtn.onclick = () => alert('¡Funcionalidad de lista de compras próximamente!');
+        dayCard.appendChild(shoppingListBtn);
+
+        weekGrid.appendChild(dayCard);
+        addEventListeners();
+    }
+
+    function createMealElement(recipe, mealType) {
+        const mealElement = document.createElement('div');
+        mealElement.className = 'meal';
+        mealElement.dataset.recipeId = recipe.id;
+
+        mealElement.innerHTML = `
+            <div class="meal-header">
+                <div>
+                    <h3>${mealType.charAt(0).toUpperCase() + mealType.slice(1)}</h3>
+                    <span>${recipe.nombre}</span>
+                </div>
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div class="recipe-details">
+                <div class="recipe-content">
+                    <div class="info-card">
+                        <h4>Información General</h4>
+                        <p><strong>Tiempo:</strong> ${recipe.tiempoPreparacionAproximado}</p>
+                        <p><strong>Dificultad:</strong> ${recipe.dificultad}</p>
+                        <p><strong>Calorías:</strong> ${recipe.resumenNutricional.caloriasTotales} kcal</p>
+                    </div>
+                    <div class="chart-card">
+                        <h4>Macros (P/G/C)</h4>
+                        <div class="chart-container">
+                            <canvas id="chart-${recipe.id}-${mealType}"></canvas>
+                        </div>
+                    </div>
+                    <div class="details-section">
+                        <h4>Ingredientes</h4>
+                        <ul>
+                            ${recipe.ingredientes.map(ing => `<li><strong>${ing.nombre}:</strong> ${ing.cantidad}</li>`).join('')}
+                        </ul>
+                    </div>
+                    <div class="details-section">
+                        <h4>Instrucciones</h4>
+                        <ol>
+                            ${recipe.instrucciones.map(step => `<li>${step}</li>`).join('')}
+                        </ol>
+                    </div>
+                    <div class="details-section">
+                        <h4>Consejos del Chef ✨</h4>
+                        <ul>
+                            ${recipe.consejosDelChef.map(tip => `<li>${tip}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        `;
+        return mealElement;
+    }
+
+    function createMacroChart(canvasId, macros) {
+        const ctx = document.getElementById(canvasId).getContext('2d');
+        if (window.chartInstances && window.chartInstances[canvasId]) {
+            window.chartInstances[canvasId].destroy();
+        }
+        
+        if(!window.chartInstances) {
+            window.chartInstances = {};
+        }
+
+        window.chartInstances[canvasId] = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Proteínas (g)', 'Grasas (g)', 'Carbohidratos (g)'],
+                datasets: [{
+                    label: 'Macronutrientes',
+                    data: [macros.proteinasTotales, macros.grasasTotales, macros.carbohidratosTotales],
+                    backgroundColor: [
+                        'rgba(46, 204, 113, 0.8)',
+                        'rgba(241, 196, 15, 0.8)',
+                        'rgba(52, 152, 219, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(46, 204, 113, 1)',
+                        'rgba(241, 196, 15, 1)',
+                        'rgba(52, 152, 219, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { boxWidth: 12, font: { size: 10 } }
+                    }
+                }
+            }
+        });
+    }
+
+
+    function addEventListeners() {
+        document.querySelectorAll('.meal').forEach(mealEl => {
+            mealEl.addEventListener('click', (e) => {
+                mealEl.classList.toggle('active');
+                const details = mealEl.querySelector('.recipe-details');
+                details.classList.toggle('show');
+                
+                const recipeId = mealEl.dataset.recipeId;
+                const mealType = mealEl.querySelector('h3').textContent.toLowerCase();
+                const canvasId = `chart-${recipeId}-${mealType}`;
+
+                if (details.classList.contains('show')) {
+                    const recipe = BD_RECETAS.recetas.find(r => r.id === recipeId);
+                    setTimeout(() => {
+                        createMacroChart(canvasId, recipe.resumenNutricional);
+                    }, 50); // Delay to allow animation to start
+                } else {
+                    if (window.chartInstances && window.chartInstances[canvasId]) {
+                        window.chartInstances[canvasId].destroy();
+                        delete window.chartInstances[canvasId];
+                    }
+                }
+            });
+        });
+    }
+
+</script>
+</body>
+</html>
+
