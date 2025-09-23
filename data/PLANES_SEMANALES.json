@@ -1,0 +1,88 @@
+{
+  "planesSemanales": [
+    {
+      "idPlan": "semana-baja-carbos-01",
+      "nombrePlan": "Plan Semanal Bajo en Carbohidratos (Base)",
+      "descripcion": "Un plan inicial enfocado en la pérdida de peso y ganancia de masa muscular, con recetas variadas, económicas y sin huevo.",
+      "planSemanal": {
+        "lunes": {
+          "almuerzo": "salmon-horno-01",
+          "cena": "pollo-plancha-aguacate-02"
+        },
+        "martes": {
+          "almuerzo": "carne-brocoli-asiatico-03",
+          "cena": "tacos-pescado-lechuga-04"
+        },
+        "miercoles": {
+          "almuerzo": "albondigas-pollo-zoodles-05",
+          "cena": "ensalada-pollo-ajillo-06"
+        },
+        "jueves": {
+          "almuerzo": "chuleta-cerdo-pure-coliflor-07",
+          "cena": "sarten-pollo-cremoso-08"
+        },
+        "viernes": {
+          "almuerzo": "ensalada-mediterranea-atun-09",
+          "cena": "pollo-toscano-10"
+        },
+        "sabado": {
+          "almuerzo": "hamburguesa-boniato-11",
+          "cena": "meatza-pizza-pollo-12"
+        },
+        "domingo": {
+          "almuerzo": "pollo-asado-vegetales-13",
+          "cena": "pescado-horno-tomates-14"
+        }
+      },
+      "planDePreparacionSemanal": {
+        "diaSugerido": "Domingo",
+        "tiempoEstimado": "1.5 - 2 horas",
+        "pasosDePrepa": [
+          {
+            "descripcion": "Cocinar todo el pollo para la semana",
+            "componente": "Pechuga y Pollo Molido",
+            "cantidadTotal": "Aprox. 1.07 kg",
+            "recetasRelacionadas": [
+              "pollo-plancha-aguacate-02",
+              "albondigas-pollo-zoodles-05",
+              "ensalada-pollo-ajillo-06",
+              "sarten-pollo-cremoso-08",
+              "pollo-toscano-10",
+              "meatza-pizza-pollo-12",
+              "pollo-asado-vegetales-13"
+            ],
+            "instruccionesAlmacenamiento": "Cocinar el pollo a la plancha o asado. Para las recetas con pollo molido, formar las albóndigas o la base de la 'meatza' y guardarlas crudas o cocinadas. Almacenar todo en recipientes herméticos en la nevera hasta por 4 días."
+          },
+          {
+            "descripcion": "Preparar vinagretas y salsas base",
+            "componente": "Aderezos",
+            "recetasRelacionadas": [
+              "ensalada-mediterranea-atun-09",
+              "carne-brocoli-asiatico-03"
+            ],
+            "instruccionesAlmacenamiento": "Guardar las vinagretas y la salsa asiática en frascos de vidrio cerrados en la nevera. Agitar bien antes de usar."
+          },
+          {
+            "descripcion": "Lavar, cortar y almacenar vegetales",
+            "componente": "Vegetales base (cebolla, pimiento, ajo, brócoli, etc.)",
+            "recetasRelacionadas": [
+              "todas"
+            ],
+            "instruccionesAlmacenamiento": "Guardar los vegetales picados en recipientes separados y herméticos en la nevera para un acceso rápido durante la semana. Los 'zoodles' es mejor hacerlos al momento para que no suelten agua."
+          },
+          {
+            "descripcion": "Cocinar carbohidratos opcionales",
+            "componente": "Quinoa, Lentejas, Frijoles",
+            "recetasRelacionadas": [
+              "salmon-horno-01",
+              "pollo-plancha-aguacate-02",
+              "tacos-pescado-lechuga-04"
+            ],
+            "instruccionesAlmacenamiento": "Guardar los granos y legumbres cocidos en recipientes herméticos en la nevera."
+          }
+        ]
+      }
+    }
+  ]
+}
+
