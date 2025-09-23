@@ -1,0 +1,797 @@
+{
+  "recetas": [
+    {
+      "id": "salmon-horno-01",
+      "nombre": "Salmón al Horno con Limón y Espárragos Tostados",
+      "tiempoPreparacionAproximado": "25-30 minutos",
+      "dificultad": "Fácil",
+      "tipoDeComida": "Almuerzo",
+      "etiquetas": ["Sin Gluten", "Sin Lácteos"],
+      "utensilios": ["bandeja para hornear", "horno"],
+      "ingredientes": [
+        {
+          "nombre": "Filete de Salmón",
+          "cantidad": "1 filete (180g)",
+          "caloriasAproximadas": 375,
+          "proteinasAproximadasGramos": 36,
+          "grasasAproximadasGramos": 25,
+          "carbohidratosAproximadosGramos": 0
+        },
+        {
+          "nombre": "Espárragos frescos",
+          "cantidad": "1 manojo (150g)",
+          "caloriasAproximadas": 30,
+          "proteinasAproximadasGramos": 3,
+          "grasasAproximadasGramos": 0,
+          "carbohidratosAproximadosGramos": 6
+        }
+      ],
+      "ingredientesOpcionales": [
+        {
+          "nombre": "Quinoa cocida",
+          "cantidad": "1/2 taza (92.5g)",
+          "carbohidratosAproximadosGramos": 20
+        }
+      ],
+      "instrucciones": [
+        "Precalienta tu horno a 200°C (400°F).",
+        "Lava los espárragos, corta la parte dura del tallo y colócalos en una bandeja para hornear. Rocíalos con aceite de oliva, sal y pimienta.",
+        "Seca el filete de salmón, úntalo con aceite y sazona con sal, pimienta y eneldo. Colócalo en la bandeja y cúbrelo con rodajas de limón.",
+        "Hornea durante 15-20 minutos, hasta que el salmón se desmenuce fácilmente."
+      ],
+      "consejosDelChef": [
+        "Añade unos tomates cherry a la bandeja para un extra de sabor y color.",
+        "Si no tienes eneldo fresco, el eneldo seco también funciona muy bien."
+      ],
+      "resumenNutricional": {
+        "caloriasTotales": 542,
+        "proteinasTotales": 39.5,
+        "grasasTotales": 39,
+        "carbohidratosTotales": 10
+      }
+    },
+    {
+      "id": "pollo-plancha-aguacate-02",
+      "nombre": "Pechuga de Pollo a la Plancha con Ensalada Fresca de Aguacate",
+      "tiempoPreparacionAproximado": "20 minutos",
+      "dificultad": "Fácil",
+      "tipoDeComida": "Cena",
+      "etiquetas": ["Sin Gluten", "Sin Lácteos"],
+      "utensilios": ["sartén o plancha", "bol grande"],
+      "ingredientes": [
+        {
+          "nombre": "Pechuga de Pollo",
+          "cantidad": "1 filete (180g)",
+          "caloriasAproximadas": 297,
+          "proteinasAproximadasGramos": 56,
+          "grasasAproximadasGramos": 6.5,
+          "carbohidratosAproximadosGramos": 0
+        },
+        {
+          "nombre": "Mezcla de lechugas/espinacas",
+          "cantidad": "2 tazas (60g)",
+          "caloriasAproximadas": 9,
+          "proteinasAproximadasGramos": 1,
+          "grasasAproximadasGramos": 0,
+          "carbohidratosAproximadosGramos": 2
+        },
+        {
+          "nombre": "Aguacate",
+          "cantidad": "1/2 unidad (75g)",
+          "caloriasAproximadas": 120,
+          "proteinasAproximadasGramos": 1.5,
+          "grasasAproximadasGramos": 11,
+          "carbohidratosAproximadosGramos": 2
+        }
+      ],
+      "ingredientesOpcionales": [
+        {
+          "nombre": "Lentejas cocidas",
+          "cantidad": "1/3 de taza (65g)",
+          "carbohidratosAproximadosGramos": 13
+        }
+      ],
+      "instrucciones": [
+        "Sazona el pollo con sal, pimienta, ajo en polvo y pimentón.",
+        "Cocina el pollo a la plancha 6-8 minutos por lado.",
+        "Mientras, monta una ensalada con las lechugas, tomate, pepino y aguacate.",
+        "Prepara un aderezo con aceite de oliva y vinagre.",
+        "Corta el pollo en tiras, añádelo a la ensalada y vierte el aderezo."
+      ],
+      "consejosDelChef": [
+        "Marina el pollo en jugo de limón y especias durante 30 minutos antes de cocinarlo.",
+        "Añade semillas de sésamo tostado a la ensalada para un toque crujiente."
+      ],
+      "resumenNutricional": {
+        "caloriasTotales": 577,
+        "proteinasTotales": 60.2,
+        "grasasTotales": 31.5,
+        "carbohidratosTotales": 11
+      }
+    },
+    {
+      "id": "carne-brocoli-asiatico-03",
+      "nombre": "Revuelto de Carne y Brócoli estilo Asiático",
+      "tiempoPreparacionAproximado": "25-30 minutos",
+      "dificultad": "Fácil",
+      "tipoDeComida": "Almuerzo",
+      "etiquetas": ["Sin Lácteos"],
+      "utensilios": ["wok o sartén grande"],
+      "ingredientes": [
+        {
+          "nombre": "Carne de Res Magra",
+          "cantidad": "150g, en tiras finas",
+          "caloriasAproximadas": 270,
+          "proteinasAproximadasGramos": 39,
+          "grasasAproximadasGramos": 12,
+          "carbohidratosAproximadosGramos": 0
+        },
+        {
+          "nombre": "Brócoli",
+          "cantidad": "1 taza (90g), en floretes",
+          "caloriasAproximadas": 31,
+          "proteinasAproximadasGramos": 2.5,
+          "grasasAproximadasGramos": 0.3,
+          "carbohidratosAproximadosGramos": 6
+        },
+        {
+          "nombre": "Salsa de Soja (baja en sodio)",
+          "cantidad": "1 cucharada (15 ml)",
+          "caloriasAproximadas": 9,
+          "proteinasAproximadasGramos": 1.3,
+          "grasasAproximadasGramos": 0,
+          "carbohidratosAproximadosGramos": 1
+        }
+      ],
+      "ingredientesOpcionales": [
+        {
+          "nombre": "Arroz de Coliflor",
+          "cantidad": "1 taza (100g)",
+          "carbohidratosAproximadosGramos": 5
+        }
+      ],
+      "instrucciones": [
+        "Prepara una salsa con salsa de soja, jengibre rallado, ajo picado y aceite de sésamo.",
+        "Saltea la carne en un wok a fuego alto y retírala.",
+        "Cocina el brócoli al vapor en el mismo wok por 3-4 minutos.",
+        "Vuelve a incorporar la carne, vierte la salsa y saltea todo junto por 1-2 minutos."
+      ],
+      "consejosDelChef": [
+        "No sobrecargues la sartén al cocinar la carne para asegurar un buen dorado.",
+        "Para un toque extra de sabor, añade un poco de cebolla en juliana junto con el brócoli."
+      ],
+      "resumenNutricional": {
+        "caloriasTotales": 380,
+        "proteinasTotales": 43.1,
+        "grasasTotales": 19.8,
+        "carbohidratosTotales": 9
+      }
+    },
+    {
+      "id": "tacos-pescado-lechuga-04",
+      "nombre": "Tacos de Pescado en Hojas de Lechuga con Pico de Gallo",
+      "tiempoPreparacionAproximado": "25 minutos",
+      "dificultad": "Fácil",
+      "tipoDeComida": "Cena",
+      "etiquetas": ["Sin Gluten"],
+      "utensilios": ["sartén", "bol"],
+      "ingredientes": [
+        {
+          "nombre": "Filete de Pescado Blanco",
+          "cantidad": "1 filete (150g)",
+          "caloriasAproximadas": 135,
+          "proteinasAproximadasGramos": 28,
+          "grasasAproximadasGramos": 2,
+          "carbohidratosAproximadosGramos": 0
+        },
+        {
+          "nombre": "Hojas de Lechuga Romana",
+          "cantidad": "3-4 hojas grandes",
+          "caloriasAproximadas": 5,
+          "proteinasAproximadasGramos": 0.5,
+          "grasasAproximadasGramos": 0,
+          "carbohidratosAproximadosGramos": 1
+        },
+        {
+          "nombre": "Tomate, Cebolla, Cilantro",
+          "cantidad": "Para el Pico de Gallo",
+          "caloriasAproximadas": 29,
+          "proteinasAproximadasGramos": 1,
+          "grasasAproximadasGramos": 0,
+          "carbohidratosAproximadosGramos": 5
+        }
+      ],
+      "ingredientesOpcionales": [
+        {
+          "nombre": "Frijoles Negros cocidos",
+          "cantidad": "1/2 taza (90g)",
+          "carbohidratosAproximadosGramos": 20
+        }
+      ],
+      "instrucciones": [
+        "Prepara el Pico de Gallo mezclando tomate, cebolla y cilantro picados con jugo de limón y sal.",
+        "Opcional: prepara una crema mezclando yogur griego con cilantro y limón.",
+        "Sazona el pescado con especias, cocínalo a la plancha y desmenúzalo.",
+        "Rellena las hojas de lechuga con el pescado, el pico de gallo y la crema."
+      ],
+      "consejosDelChef": [
+        "Para un toque crujiente, añade un poco de repollo morado en tiras finas a tus tacos.",
+        "Si te gusta el picante, añade unas rodajas de jalapeño al pico de gallo."
+      ],
+      "resumenNutricional": {
+        "caloriasTotales": 191,
+        "proteinasTotales": 32.5,
+        "grasasTotales": 2,
+        "carbohidratosTotales": 8
+      }
+    },
+    {
+      "id": "albondigas-pollo-zoodles-05",
+      "nombre": "Albóndigas de Pollo Molido en Salsa de Tomate con 'Zoodles'",
+      "tiempoPreparacionAproximado": "35-40 minutos",
+      "dificultad": "Fácil",
+      "tipoDeComida": "Almuerzo",
+      "etiquetas": ["Sin Gluten", "Sin Lácteos Posible"],
+      "utensilios": ["sartén u olla", "espiralizador"],
+      "ingredientes": [
+        {
+          "nombre": "Pollo Molido",
+          "cantidad": "180g",
+          "caloriasAproximadas": 260,
+          "proteinasAproximadasGramos": 38,
+          "grasasAproximadasGramos": 11,
+          "carbohidratosAproximadosGramos": 0
+        },
+        {
+          "nombre": "Calabacín",
+          "cantidad": "1 mediano (200g)",
+          "caloriasAproximadas": 34,
+          "proteinasAproximadasGramos": 2.4,
+          "grasasAproximadasGramos": 0.6,
+          "carbohidratosAproximadosGramos": 6
+        },
+        {
+          "nombre": "Salsa de Tomate (sin azúcar)",
+          "cantidad": "1 taza (240 ml)",
+          "caloriasAproximadas": 40,
+          "proteinasAproximadasGramos": 2,
+          "grasasAproximadasGramos": 0,
+          "carbohidratosAproximadosGramos": 8
+        }
+      ],
+      "ingredientesOpcionales": [
+        {
+          "nombre": "Pan integral",
+          "cantidad": "1 rebanada (30g)",
+          "carbohidratosAproximadosGramos": 15
+        }
+      ],
+      "instrucciones": [
+        "Mezcla el pollo molido con ajo en polvo, perejil y sal. Forma las albóndigas.",
+        "Dóralas en una sartén, vierte la salsa de tomate y cocina a fuego lento por 15-20 minutos.",
+        "Usa un espiralizador para hacer fideos de calabacín ('zoodles').",
+        "Saltea los 'zoodles' por solo 2-3 minutos y sírvelos como base para las albóndigas."
+      ],
+      "consejosDelChef": [
+        "Añade una pizca de copos de chile rojo a la salsa de tomate para darle un toque picante.",
+        "No cocines demasiado los 'zoodles' o soltarán mucha agua y quedarán blandos."
+      ],
+      "resumenNutricional": {
+        "caloriasTotales": 344,
+        "proteinasTotales": 42.9,
+        "grasasTotales": 11.6,
+        "carbohidratosTotales": 16
+      }
+    },
+    {
+      "id": "ensalada-pollo-ajillo-06",
+      "nombre": "Ensalada Tibia de Pollo al Ajillo y Champiñones",
+      "tiempoPreparacionAproximado": "20 minutos",
+      "dificultad": "Fácil",
+      "tipoDeComida": "Cena",
+      "etiquetas": ["Sin Gluten", "Sin Lácteos"],
+      "utensilios": ["sartén"],
+      "ingredientes": [
+        {
+          "nombre": "Pechuga de Pollo",
+          "cantidad": "1 filete (150g)",
+          "caloriasAproximadas": 248,
+          "proteinasAproximadasGramos": 47,
+          "grasasAproximadasGramos": 5.4,
+          "carbohidratosAproximadosGramos": 0
+        },
+        {
+          "nombre": "Champiñones, laminados",
+          "cantidad": "1 taza (70g)",
+          "caloriasAproximadas": 15,
+          "proteinasAproximadasGramos": 2.2,
+          "grasasAproximadasGramos": 0.2,
+          "carbohidratosAproximadosGramos": 2
+        },
+        {
+          "nombre": "Rúcula",
+          "cantidad": "2 tazas (40g)",
+          "caloriasAproximadas": 10,
+          "proteinasAproximadasGramos": 1,
+          "grasasAproximadasGramos": 0.3,
+          "carbohidratosAproximadosGramos": 1
+        }
+      ],
+      "ingredientesOpcionales": [
+        {
+          "nombre": "Garbanzos tostados",
+          "cantidad": "1/2 taza (80g)",
+          "carbohidratosAproximadosGramos": 25
+        }
+      ],
+      "instrucciones": [
+        "Corta el pollo en cubos y sazónalo.",
+        "Sofríe láminas de ajo en aceite hasta que estén doradas. Retíralas.",
+        "En el mismo aceite, cocina el pollo y luego los champiñones.",
+        "Sirve la mezcla caliente sobre una cama de rúcula y decora con el ajo crujiente."
+      ],
+      "consejosDelChef": [
+        "Unas lascas de queso parmesano por encima le dan un toque salado delicioso.",
+        "Asegúrate de no quemar el ajo, ya que amargaría el plato."
+      ],
+      "resumenNutricional": {
+        "caloriasTotales": 402,
+        "proteinasTotales": 50.6,
+        "grasasTotales": 19.9,
+        "carbohidratosTotales": 5
+      }
+    },
+    {
+      "id": "chuleta-cerdo-pure-coliflor-07",
+      "nombre": "Chuletas de Cerdo Selladas con Puré Cremoso de Coliflor al Ajo",
+      "tiempoPreparacionAproximado": "30-35 minutos",
+      "dificultad": "Intermedio",
+      "tipoDeComida": "Almuerzo",
+      "etiquetas": ["Sin Gluten"],
+      "utensilios": ["sartén", "olla", "licuadora"],
+      "ingredientes": [
+        {
+          "nombre": "Chuleta de Cerdo magra",
+          "cantidad": "1 chuleta (180g)",
+          "caloriasAproximadas": 380,
+          "proteinasAproximadasGramos": 45,
+          "grasasAproximadasGramos": 22,
+          "carbohidratosAproximadosGramos": 0
+        },
+        {
+          "nombre": "Coliflor, en floretes",
+          "cantidad": "1.5 tazas (150g)",
+          "caloriasAproximadas": 38,
+          "proteinasAproximadasGramos": 2.9,
+          "grasasAproximadasGramos": 0.4,
+          "carbohidratosAproximadosGramos": 8
+        }
+      ],
+      "ingredientesOpcionales": [
+        {
+          "nombre": "Calabaza asada",
+          "cantidad": "1/2 taza (75g)",
+          "carbohidratosAproximadosGramos": 8
+        }
+      ],
+      "instrucciones": [
+        "Cuece la coliflor hasta que esté muy tierna y escúrrela bien.",
+        "Sazona la chuleta de cerdo y cocínala en una sartén 4-6 minutos por lado.",
+        "Licúa la coliflor con ajo, leche y aceite hasta obtener un puré suave.",
+        "Sirve la chuleta junto al puré."
+      ],
+      "consejosDelChef": [
+        "Añade una cucharada de mantequilla al puré para un extra de cremosidad y sabor.",
+        "Dejar reposar la chuleta unos minutos antes de servirla ayuda a que los jugos se redistribuyan y quede más tierna."
+      ],
+      "resumenNutricional": {
+        "caloriasTotales": 557,
+        "proteinasTotales": 49.1,
+        "grasasTotales": 36.9,
+        "carbohidratosTotales": 10
+      }
+    },
+    {
+      "id": "sarten-pollo-cremoso-08",
+      "nombre": "Sartén de Pollo Cremoso con Espinacas y Champiñones",
+      "tiempoPreparacionAproximado": "25-30 minutos",
+      "dificultad": "Fácil",
+      "tipoDeComida": "Cena",
+      "etiquetas": ["Sin Gluten"],
+      "utensilios": ["sartén grande"],
+      "ingredientes": [
+        {
+          "nombre": "Pechuga de Pollo",
+          "cantidad": "1 filete (180g)",
+          "caloriasAproximadas": 297,
+          "proteinasAproximadasGramos": 56,
+          "grasasAproximadasGramos": 6.5,
+          "carbohidratosAproximadosGramos": 0
+        },
+        {
+          "nombre": "Champiñones, laminados",
+          "cantidad": "1 taza (70g)",
+          "caloriasAproximadas": 15,
+          "proteinasAproximadasGramos": 2.2,
+          "grasasAproximadasGramos": 0.2,
+          "carbohidratosAproximadosGramos": 2
+        },
+        {
+          "nombre": "Crema de leche (Nata)",
+          "cantidad": "1/4 taza (60 ml)",
+          "caloriasAproximadas": 204,
+          "proteinasAproximadasGramos": 1.2,
+          "grasasAproximadasGramos": 22,
+          "carbohidratosAproximadosGramos": 1
+        }
+      ],
+      "ingredientesOpcionales": [
+        {
+          "nombre": "Pan integral",
+          "cantidad": "1 rebanada (30g)",
+          "carbohidratosAproximadosGramos": 15
+        }
+      ],
+      "instrucciones": [
+        "Corta el pollo en cubos, sazona y dóralo en una sartén. Retíralo.",
+        "En la misma sartén, saltea los champiñones y el ajo.",
+        "Agrega las espinacas hasta que se reduzcan.",
+        "Vierte la crema de leche, remueve y vuelve a incorporar el pollo. Cocina a fuego lento hasta que la salsa espese."
+      ],
+      "consejosDelChef": [
+        "Para una versión sin lácteos, usa leche de coco de lata (la parte espesa) en lugar de crema.",
+        "Ralla un poco de nuez moscada en la salsa para potenciar los sabores."
+      ],
+      "resumenNutricional": {
+        "caloriasTotales": 539,
+        "proteinasTotales": 61.5,
+        "grasasTotales": 28.9,
+        "carbohidratosTotales": 6
+      }
+    },
+    {
+      "id": "ensalada-mediterranea-atun-09",
+      "nombre": "Ensalada 'Power Mediterránea' con Atún y Garbanzos",
+      "tiempoPreparacionAproximado": "20 minutos",
+      "dificultad": "Fácil",
+      "tipoDeComida": "Almuerzo",
+      "etiquetas": ["Sin Gluten", "Sin Lácteos"],
+      "utensilios": ["bol grande", "frasco para aderezo"],
+      "ingredientes": [
+        {
+          "nombre": "Atún en agua, escurrido",
+          "cantidad": "1 lata (120g)",
+          "caloriasAproximadas": 140,
+          "proteinasAproximadasGramos": 32,
+          "grasasAproximadasGramos": 1,
+          "carbohidratosAproximadosGramos": 0
+        },
+        {
+          "nombre": "Garbanzos cocidos",
+          "cantidad": "1/2 taza (80g)",
+          "caloriasAproximadas": 135,
+          "proteinasAproximadasGramos": 7.5,
+          "grasasAproximadasGramos": 2.1,
+          "carbohidratosAproximadosGramos": 25
+        },
+        {
+          "nombre": "Judías verdes, cocidas",
+          "cantidad": "1/2 taza (60g)",
+          "caloriasAproximadas": 20,
+          "proteinasAproximadasGramos": 1,
+          "grasasAproximadasGramos": 0,
+          "carbohidratosAproximadosGramos": 4
+        }
+      ],
+      "ingredientesOpcionales": [
+        {
+          "nombre": "Patatas baby, cocidas",
+          "cantidad": "5 unidades (100g)",
+          "carbohidratosAproximadosGramos": 15
+        }
+      ],
+      "instrucciones": [
+        "Prepara una vinagreta con aceite de oliva, vinagre y mostaza.",
+        "En un bol, crea una base de lechugas.",
+        "Distribuye por encima el atún, los garbanzos, las judías verdes, tomates y aceitunas.",
+        "Adereza con la vinagreta justo antes de servir."
+      ],
+      "consejosDelChef": [
+        "Añadir un poco de cebolla morada en rodajas finas le da un toque picante y crujiente.",
+        "Puedes preparar una tanda grande de vinagreta y guardarla en la nevera para toda la semana."
+      ],
+      "resumenNutricional": {
+        "caloriasTotales": 443,
+        "proteinasTotales": 42.5,
+        "grasasTotales": 17.1,
+        "carbohidratosTotales": 35
+      }
+    },
+    {
+      "id": "pollo-toscano-10",
+      "nombre": "Pollo Cremoso Estilo Toscano con Espinacas",
+      "tiempoPreparacionAproximado": "30 minutos",
+      "dificultad": "Intermedio",
+      "tipoDeComida": "Cena",
+      "etiquetas": ["Sin Gluten"],
+      "utensilios": ["sartén grande"],
+      "ingredientes": [
+        {
+          "nombre": "Pechuga de Pollo",
+          "cantidad": "1 filete (180g)",
+          "caloriasAproximadas": 297,
+          "proteinasAproximadasGramos": 56,
+          "grasasAproximadasGramos": 6.5,
+          "carbohidratosAproximadosGramos": 0
+        },
+        {
+          "nombre": "Crema de leche (Nata)",
+          "cantidad": "1/4 taza (60 ml)",
+          "caloriasAproximadas": 204,
+          "proteinasAproximadasGramos": 1.2,
+          "grasasAproximadasGramos": 22,
+          "carbohidratosAproximadosGramos": 1
+        },
+        {
+          "nombre": "Tomates secos en aceite",
+          "cantidad": "4 unidades (20g), picados",
+          "caloriasAproximadas": 58,
+          "proteinasAproximadasGramos": 1,
+          "grasasAproximadasGramos": 3,
+          "carbohidratosAproximadosGramos": 5
+        }
+      ],
+      "ingredientesOpcionales": [
+        {
+          "nombre": "Pasta integral o de lentejas",
+          "cantidad": "1/2 taza (70g), cocida",
+          "carbohidratosAproximadosGramos": 22
+        }
+      ],
+      "instrucciones": [
+        "Corta el pollo en filetes finos, sazona y dóralo. Retíralo.",
+        "Sofríe ajo y tomates secos en la misma sartén.",
+        "Vierte la crema, añade parmesano (opcional) e incorpora las espinacas hasta que se reduzcan.",
+        "Vuelve a añadir el pollo y cúbrelo con la salsa."
+      ],
+      "consejosDelChef": [
+        "Usa un poco del aceite del frasco de los tomates secos para cocinar el pollo, ¡añade mucho sabor!",
+        "Si la salsa queda muy espesa, puedes aligerarla con un chorrito de caldo de pollo."
+      ],
+      "resumenNutricional": {
+        "caloriasTotales": 577,
+        "proteinasTotales": 60.1,
+        "grasasTotales": 31.7,
+        "carbohidratosTotales": 8
+      }
+    },
+    {
+      "id": "hamburguesa-boniato-11",
+      "nombre": "Hamburguesas Caseras al Plato con 'Papas' de Boniato",
+      "tiempoPreparacionAproximado": "30-35 minutos",
+      "dificultad": "Fácil",
+      "tipoDeComida": "Almuerzo",
+      "etiquetas": ["Sin Gluten"],
+      "utensilios": ["sartén o plancha", "horno o freidora de aire"],
+      "ingredientes": [
+        {
+          "nombre": "Carne Molida Magra",
+          "cantidad": "180g",
+          "caloriasAproximadas": 365,
+          "proteinasAproximadasGramos": 36,
+          "grasasAproximadasGramos": 23,
+          "carbohidratosAproximadosGramos": 0
+        },
+        {
+          "nombre": "Loncha de Queso",
+          "cantidad": "1 unidad (20g)",
+          "caloriasAproximadas": 70,
+          "proteinasAproximadasGramos": 4,
+          "grasasAproximadasGramos": 6,
+          "carbohidratosAproximadosGramos": 1
+        }
+      ],
+      "ingredientesOpcionales": [
+        {
+          "nombre": "Boniato (Camote)",
+          "cantidad": "1 pequeño (150g)",
+          "caloriasAproximadas": 130,
+          "proteinasAproximadasGramos": 2,
+          "grasasAproximadasGramos": 0.2,
+          "carbohidratosAproximadosGramos": 25
+        }
+      ],
+      "instrucciones": [
+        "Si usas boniato, córtalo en gajos, mézclalo con aceite y pimentón, y hornéalo a 200°C por 20-25 minutos.",
+        "Mezcla la carne molida con especias y dale forma de hamburguesa.",
+        "Cocínala a la plancha 4-6 minutos por lado, añadiendo el queso al final.",
+        "Sirve la hamburguesa sobre lechuga con tus toppings favoritos."
+      ],
+      "consejosDelChef": [
+        "No presiones la hamburguesa con la espátula mientras se cocina para que no pierda sus jugos."
+      ],
+      "resumenNutricional": {
+        "caloriasTotales": 455,
+        "proteinasTotales": 41,
+        "grasasTotales": 29,
+        "carbohidratosTotales": 4
+      }
+    },
+    {
+      "id": "meatza-pizza-pollo-12",
+      "nombre": "'Meatza' (Pizza con Base de Pollo y Queso)",
+      "tiempoPreparacionAproximado": "45-50 minutos",
+      "dificultad": "Intermedio",
+      "tipoDeComida": "Cena",
+      "etiquetas": ["Sin Gluten"],
+      "utensilios": ["procesador de alimentos o bol", "bandeja para hornear"],
+      "ingredientes": [
+        {
+          "nombre": "Pollo Molido",
+          "cantidad": "200g",
+          "caloriasAproximadas": 288,
+          "proteinasAproximadasGramos": 42,
+          "grasasAproximadasGramos": 12,
+          "carbohidratosAproximadosGramos": 0
+        },
+        {
+          "nombre": "Queso Mozzarella, rallado",
+          "cantidad": "3/4 taza (85g)",
+          "caloriasAproximadas": 240,
+          "proteinasAproximadasGramos": 18,
+          "grasasAproximadasGramos": 18,
+          "carbohidratosAproximadosGramos": 2
+        },
+        {
+          "nombre": "Salsa de tomate (sin azúcar)",
+          "cantidad": "3 cucharadas (45 ml)",
+          "caloriasAproximadas": 15,
+          "proteinasAproximadasGramos": 1,
+          "grasasAproximadasGramos": 0,
+          "carbohidratosAproximadosGramos": 4
+        }
+      ],
+      "ingredientesOpcionales": [
+        {
+          "nombre": "Frutos Rojos con Yogur Griego",
+          "cantidad": "1 taza de frutos (150g) y 2 cucharadas de yogur (30g)",
+          "carbohidratosAproximadosGramos": 16
+        }
+      ],
+      "instrucciones": [
+        "Precalienta el horno a 220°C (425°F).",
+        "Mezcla el pollo molido con 1/2 taza de mozzarella y especias.",
+        "Extiende la mezcla sobre papel de horno formando un círculo fino y hornea por 20 minutos.",
+        "Saca la base, añade la salsa, el resto del queso y tus toppings favoritos.",
+        "Vuelve a hornear por 10-15 minutos más."
+      ],
+      "consejosDelChef": [
+        "Humedece ligeramente tus manos para extender la base de pollo sin que se te pegue.",
+        "Puedes añadir tus toppings de pizza favoritos, como pepperoni o aceitunas."
+      ],
+      "resumenNutricional": {
+        "caloriasTotales": 563,
+        "proteinasTotales": 62,
+        "grasasTotales": 30,
+        "carbohidratosTotales": 9
+      }
+    },
+    {
+      "id": "pollo-asado-vegetales-13",
+      "nombre": "Clásico Pollo Asado de Domingo con Hierbas y Vegetales Rostizados",
+      "tiempoPreparacionAproximado": "1 hora y 15 minutos",
+      "dificultad": "Intermedio",
+      "tipoDeComida": "Almuerzo",
+      "etiquetas": ["Sin Gluten", "Sin Lácteos"],
+      "utensilios": ["bandeja para hornear", "horno"],
+      "ingredientes": [
+        {
+          "nombre": "Piezas de Pollo",
+          "cantidad": "200g",
+          "caloriasAproximadas": 450,
+          "proteinasAproximadasGramos": 40,
+          "grasasAproximadasGramos": 30,
+          "carbohidratosAproximadosGramos": 0
+        },
+        {
+          "nombre": "Coles de Bruselas",
+          "cantidad": "1 taza (90g)",
+          "caloriasAproximadas": 39,
+          "proteinasAproximadasGramos": 3,
+          "grasasAproximadasGramos": 0.5,
+          "carbohidratosAproximadosGramos": 8
+        },
+        {
+          "nombre": "Pimiento Rojo",
+          "cantidad": "1/2 unidad (75g)",
+          "caloriasAproximadas": 20,
+          "proteinasAproximadasGramos": 0.7,
+          "grasasAproximadasGramos": 0.2,
+          "carbohidratosAproximadosGramos": 4
+        }
+      ],
+      "ingredientesOpcionales": [
+        {
+          "nombre": "Puré de Coliflor y Zanahoria",
+          "cantidad": "1 taza de coliflor (100g) y 1 zanahoria (60g)",
+          "carbohidratosAproximadosGramos": 11
+        }
+      ],
+      "instrucciones": [
+        "Precalienta el horno a 200°C (400°F).",
+        "Sazona el pollo con aceite, hierbas, ajo y sal.",
+        "Mezcla los vegetales con aceite y sal.",
+        "Extiende los vegetales en una bandeja y coloca el pollo encima.",
+        "Hornea por 45-55 minutos."
+      ],
+      "consejosDelChef": [
+        "Colocar el pollo sobre los vegetales permite que los jugos del pollo den sabor a las verduras.",
+        "Guarda los huesos del pollo para hacer un caldo casero lleno de nutrientes."
+      ],
+      "resumenNutricional": {
+        "caloriasTotales": 518,
+        "proteinasTotales": 44.1,
+        "grasasTotales": 30.7,
+        "carbohidratosTotales": 14
+      }
+    },
+    {
+      "id": "pescado-horno-tomates-14",
+      "nombre": "Pescado Blanco al Horno con Tomates Cherry y Aceitunas",
+      "tiempoPreparacionAproximado": "30 minutos",
+      "dificultad": "Fácil",
+      "tipoDeComida": "Cena",
+      "etiquetas": ["Sin Gluten", "Sin Lácteos"],
+      "utensilios": ["fuente para horno"],
+      "ingredientes": [
+        {
+          "nombre": "Filete de Pescado Blanco",
+          "cantidad": "1 filete (180g)",
+          "caloriasAproximadas": 160,
+          "proteinasAproximadasGramos": 35,
+          "grasasAproximadasGramos": 1.5,
+          "carbohidratosAproximadosGramos": 0
+        },
+        {
+          "nombre": "Tomates Cherry",
+          "cantidad": "1 taza (150g)",
+          "caloriasAproximadas": 27,
+          "proteinasAproximadasGramos": 1.3,
+          "grasasAproximadasGramos": 0.3,
+          "carbohidratosAproximadosGramos": 6
+        },
+        {
+          "nombre": "Aceitunas Kalamata",
+          "cantidad": "10 unidades (40g)",
+          "caloriasAproximadas": 90,
+          "proteinasAproximadasGramos": 0.5,
+          "grasasAproximadasGramos": 9,
+          "carbohidratosAproximadosGramos": 1
+        }
+      ],
+      "ingredientesOpcionales": [
+        {
+          "nombre": "Arroz salvaje cocido",
+          "cantidad": "1/2 taza (82.5g)",
+          "carbohidratosAproximadosGramos": 18
+        }
+      ],
+      "instrucciones": [
+        "Precalienta el horno a 200°C (400°F).",
+        "Haz una cama con tomates cherry, aceitunas y ajo en una fuente para horno.",
+        "Sazona el pescado con aceite y orégano y colócalo sobre los vegetales.",
+        "Hornea por 15-20 minutos."
+      ],
+      "consejosDelChef": [
+        "Añadir unas alcaparras junto con las aceitunas le da un toque salino extra.",
+        "Unas rodajas de limón sobre el pescado antes de hornear realzan su sabor."
+      ],
+      "resumenNutricional": {
+        "caloriasTotales": 406,
+        "proteinasTotales": 37.2,
+        "grasasTotales": 24.8,
+        "carbohidratosTotales": 9
+      }
+    }
+  ]
+}
