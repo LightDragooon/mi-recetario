@@ -522,7 +522,7 @@ function generateShoppingList(recipeIds, includeOptionals) {
     ingredientsToProcess.forEach(ing => {
         const key = `${ing.nombre}_${ing.unidadMetrica}`;
         if (!consolidated[key]) {
-            consolidated[key] = { nombre: ing.nombre, cantidad: 0, unidad: ing.unidadMetrica, categoria: ing.categoria || 'Otros' };
+            consolidated[key] = { nombre: ing.nombre, cantidad: 0, unidad: ing.unidadMetrica, categoria: ing.categoria || 'Otros', subcategoria: ing.subcategoria || 'General' };
         }
         consolidated[key].cantidad += (ing.cantidadMetrica * portionMultiplier);
     });
@@ -551,8 +551,13 @@ function generateShoppingList(recipeIds, includeOptionals) {
             }
         }
 
-        if (!categorized[item.categoria]) categorized[item.categoria] = [];
-        categorized[item.categoria].push(item);
+        if (!categorized[item.categoria]) {
+            categorized[item.categoria] = {};
+        }
+        if (!categorized[item.categoria][item.subcategoria]) {
+            categorized[item.categoria][item.subcategoria] = [];
+        }
+        categorized[item.categoria][item.subcategoria].push(item);
     }
     return { categorized, totalCost };
 }
@@ -573,27 +578,40 @@ function displayShoppingList(categorizedList, totalCost) {
         const title = document.createElement('h3');
         title.textContent = category;
         categoryDiv.appendChild(title);
-        const ul = document.createElement('ul');
-        categorizedList[category].forEach(item => {
-            const li = document.createElement('li');
-            const checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            const checkboxId = `item-${category}-${item.nombre.replace(/\s+/g, '-')}`;
-            checkbox.id = checkboxId;
-            const label = document.createElement('label');
-            label.htmlFor = checkboxId;
-            label.textContent = `${item.nombre} - ${item.cantidad % 1 === 0 ? item.cantidad : item.cantidad.toFixed(2)} ${item.unidad}`;
-            const costSpan = document.createElement('span');
-            costSpan.className = 'list-item-cost';
-            costSpan.textContent = item.costo ? `${currencySymbol}${item.costo.toFixed(2)}` : '';
 
-            checkbox.onchange = () => label.classList.toggle('checked', checkbox.checked);
-            li.appendChild(checkbox);
-            li.appendChild(label);
-            li.appendChild(costSpan);
-            ul.appendChild(li);
+        // CAMBIO: Bucle anidado para las subcategorías
+        const sortedSubcategories = Object.keys(categorizedList[category]).sort();
+        sortedSubcategories.forEach(subcategory => {
+            const subcategoryDiv = document.createElement('div');
+            subcategoryDiv.className = 'shopping-list-subcategory'; // Nueva clase para estilos
+
+            const subTitle = document.createElement('h4');
+            subTitle.textContent = subcategory;
+            subcategoryDiv.appendChild(subTitle);
+
+            const ul = document.createElement('ul');
+            categorizedList[category][subcategory].forEach(item => {
+                const li = document.createElement('li');
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                const checkboxId = `item-${category}-${subcategory}-${item.nombre.replace(/\s+/g, '-')}`;
+                checkbox.id = checkboxId;
+                const label = document.createElement('label');
+                label.htmlFor = checkboxId;
+                label.textContent = `${item.nombre} - ${item.cantidad % 1 === 0 ? item.cantidad : item.cantidad.toFixed(2)} ${item.unidad}`;
+                const costSpan = document.createElement('span');
+                costSpan.className = 'list-item-cost';
+                costSpan.textContent = item.costo ? `${currencySymbol}${item.costo.toFixed(2)}` : '';
+
+                checkbox.onchange = () => label.classList.toggle('checked', checkbox.checked);
+                li.appendChild(checkbox);
+                li.appendChild(label);
+                li.appendChild(costSpan);
+                ul.appendChild(li);
+            });
+            subcategoryDiv.appendChild(ul);
+            categoryDiv.appendChild(subcategoryDiv);
         });
-        categoryDiv.appendChild(ul);
         contentDiv.appendChild(categoryDiv);
     });
 

@@ -323,4 +323,27 @@ header p {
 .prep-step:last-child { border-bottom: none; }
 .prep-step p { margin: 5px 0; }
 .prep-step strong { color: var(--header-color); }
+.shopping-list-category h3, .prep-step h3 { 
+    color: var(--primary-color); 
+    margin-top: 20px; 
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--border-color); /* Añadido para separar visualmente */
+    padding-bottom: 5px; /* Añadido para separar visualmente */
+}
+
+/* CAMBIO: Estilos para la subcategoría */
+.shopping-list-subcategory {
+    margin-left: 15px; /* Indentación para mostrar jerarquía */
+    margin-bottom: 15px;
+}
+
+.shopping-list-subcategory h4 {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    font-size: 1rem; /* Un poco más pequeño que el h3 */
+    color: var(--secondary-color); /* Color secundario para diferenciar */
+    font-weight: 600;
+}
+
+.shopping-list-category ul { list-style: none; padding: 0; }
 @media print { body * { visibility: hidden; } .modal-overlay, .modal-overlay * { visibility: visible; } .modal-overlay { position: absolute; left: 0; top: 0; background-color: white; height: auto; overflow: visible; } .modal-content { box-shadow: none; border: none; width: 100%; max-width: 100%; max-height: none; padding: 0; } .modal-header, .modal-options, .modal-actions, .shopping-list-category input, .list-item-cost { display: none; } .shopping-list-category label.checked { text-decoration: none; color: var(--text-color); } }
