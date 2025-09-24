@@ -37,6 +37,14 @@
                         <label for="portionSelectorInput">Personas:</label>
                         <input type="number" id="portionSelectorInput" value="1" min="1">
                     </div>
+                    <div class="currency-selector">
+                        <label for="currencySelector">Moneda:</label>
+                        <select id="currencySelector" class="currency-select">
+                            <option value="₡">CRC (₡)</option>
+                            <option value="$">USD ($)</option>
+                            <option value="€">EUR (€)</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="action-buttons">
                     <button id="weeklyShopBtn" class="action-btn">🛒 Lista Semanal</button>
@@ -74,6 +82,14 @@
         <div id="myPricesView" class="view">
             <h2>Mi Catálogo de Precios</h2>
             <p style="text-align: center;">Introduce los precios de tu supermercado local para obtener estimaciones de costos precisas.</p>
+            <div class="currency-selector-container">
+                <label for="currencySelectorPrices">Moneda:</label>
+                <select id="currencySelectorPrices" class="currency-select">
+                    <option value="₡">CRC (₡)</option>
+                    <option value="$">USD ($)</option>
+                    <option value="€">EUR (€)</option>
+                </select>
+            </div>
             <div class="price-catalog-list" id="priceCatalogList"></div>
             <div class="price-actions">
                 <button id="savePricesBtn" class="action-btn" style="background-color: var(--primary-color);">Guardar Mis Precios</button>

@@ -5,6 +5,8 @@ let userPrices = {};
 let customPlans = [];
 let portionMultiplier = 1;
 let customPlan = {}; 
+let currencySymbol = '₡';
+let shoppingListState = { recipeIds: [], includeOptionals: false };
 
 // --- INITIALIZATION ---
 async function initializeApp() {
@@ -17,9 +19,9 @@ async function initializeApp() {
         PLANES_SEMANALES = await plansRes.json();
         
         const mainContentArea = document.getElementById('viewPlansView');
-        if (mainContentArea) mainContentArea.innerHTML = `<div class="selectors-container"><div class="top-controls"><select id="planSelector" aria-label="Seleccionar Plan Semanal"></select><div class="portion-selector"><label for="portionSelectorInput">Personas:</label><input type="number" id="portionSelectorInput" value="1" min="1"></div></div><div class="action-buttons"><button id="weeklyShopBtn" class="action-btn">🛒 Lista Semanal</button><button id="mealPrepBtn" class="action-btn">🍳 Plan de Preparación</button></div><div class="day-selector" id="daySelector"></div></div><div class="week-grid" id="weekGrid"><div class="loader" id="loader"></div></div>`;
         
         loadUserData();
+        setupCurrencySelector();
 
         setupViewSwitcher();
         
@@ -55,6 +57,7 @@ document.addEventListener('DOMContentLoaded', initializeApp);
 function loadUserData() {
     userPrices = JSON.parse(localStorage.getItem('userPrices')) || {};
     customPlans = JSON.parse(localStorage.getItem('savedCustomPlans')) || [];
+    currencySymbol = localStorage.getItem('currencySymbol') || '₡';
     const savedPlan = localStorage.getItem('customMealPlan');
     if (savedPlan) {
         customPlan = JSON.parse(savedPlan);
@@ -147,6 +150,24 @@ function populatePriceCatalog() {
         });
         localStorage.setItem('userPrices', JSON.stringify(userPrices));
         alert('¡Precios guardados!');
+    });
+}
+
+function setupCurrencySelector() {
+    const selectors = document.querySelectorAll('.currency-select');
+    selectors.forEach(selector => {
+        selector.value = currencySymbol; // Establecer el valor inicial
+        selector.addEventListener('change', (e) => {
+            currencySymbol = e.target.value;
+            localStorage.setItem('currencySymbol', currencySymbol);
+            // Sincronizar todos los selectores
+            selectors.forEach(s => s.value = currencySymbol);
+            // Refrescar la lista de compras si está abierta
+            if (document.getElementById('shoppingListModal').classList.contains('show')) {
+                const { categorized, totalCost } = generateShoppingList(shoppingListState.recipeIds, shoppingListState.includeOptionals);
+                displayShoppingList(categorized, totalCost);
+            }
+        });
     });
 }
 
@@ -564,7 +585,7 @@ function displayShoppingList(categorizedList, totalCost) {
             label.textContent = `${item.nombre} - ${item.cantidad % 1 === 0 ? item.cantidad : item.cantidad.toFixed(2)} ${item.unidad}`;
             const costSpan = document.createElement('span');
             costSpan.className = 'list-item-cost';
-            costSpan.textContent = item.costo ? `$${item.costo.toFixed(2)}` : '';
+            costSpan.textContent = item.costo ? `${currencySymbol}${item.costo.toFixed(2)}` : '';
 
             checkbox.onchange = () => label.classList.toggle('checked', checkbox.checked);
             li.appendChild(checkbox);
@@ -579,7 +600,7 @@ function displayShoppingList(categorizedList, totalCost) {
     if (totalCost > 0) {
         const totalDiv = document.createElement('div');
         totalDiv.className = 'shopping-list-total';
-        totalDiv.textContent = `Costo Estimado Total: $${totalCost.toFixed(2)}`;
+        totalDiv.textContent = `Costo Estimado Total: ${currencySymbol}${totalCost.toFixed(2)}`;
         contentDiv.appendChild(totalDiv);
     }
 }
@@ -610,6 +631,8 @@ function showShoppingList(options) {
     const includeOptionalsCheckbox = document.getElementById('includeOptionals');
     
     function updateList() {
+        shoppingListState.recipeIds = recipeIds;
+        shoppingListState.includeOptionals = includeOptionalsCheckbox.checked;
         const { categorized, totalCost } = generateShoppingList(recipeIds, includeOptionalsCheckbox.checked);
         displayShoppingList(categorized, totalCost);
     }
