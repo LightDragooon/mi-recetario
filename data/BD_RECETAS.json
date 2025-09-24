@@ -17,6 +17,7 @@
       "ingredientes": [
         {
           "nombre": "Filete de Salmón",
+          "subcategoria": "Salmón",
           "cantidad": "1 filete (180g)",
           "cantidadMetrica": 180,
           "unidadMetrica": "g",
@@ -28,6 +29,7 @@
         },
         {
           "nombre": "Espárragos frescos",
+          "subcategoria": "Espárragos",
           "cantidad": "1 manojo (150g)",
           "cantidadMetrica": 150,
           "unidadMetrica": "g",
@@ -39,6 +41,7 @@
         },
         {
           "nombre": "Limón",
+          "subcategoria": "Limón",
           "cantidad": "1/2 unidad",
           "cantidadMetrica": 0.5,
           "unidadMetrica": "unidades",
@@ -50,6 +53,7 @@
         },
         {
           "nombre": "Eneldo fresco",
+          "subcategoria": "Eneldo",
           "cantidad": "1 ramita",
           "cantidadMetrica": 1,
           "unidadMetrica": "unidades",
@@ -61,6 +65,7 @@
         },
         {
           "nombre": "Aceite de Oliva Virgen Extra",
+          "subcategoria": "Aceite de Oliva",
           "cantidad": "1 cucharada (15ml)",
           "cantidadMetrica": 15,
           "unidadMetrica": "ml",
@@ -74,6 +79,7 @@
       "ingredientesOpcionales": [
         {
           "nombre": "Quinoa cocida",
+          "subcategoria": "Quinoa",
           "cantidad": "1/2 taza (90g)",
           "cantidadMetrica": 90,
           "unidadMetrica": "g",
@@ -115,6 +121,7 @@
       "ingredientes": [
         {
           "nombre": "Pechuga de Pollo",
+          "subcategoria": "Pollo",
           "cantidad": "1 filete (180g)",
           "cantidadMetrica": 180,
           "unidadMetrica": "g",
@@ -126,6 +133,7 @@
         },
         {
           "nombre": "Mezcla de lechugas/espinacas",
+          "subcategoria": "Hojas Verdes",
           "cantidad": "2 tazas (60g)",
           "cantidadMetrica": 60,
           "unidadMetrica": "g",
@@ -137,6 +145,7 @@
         },
         {
           "nombre": "Aguacate",
+          "subcategoria": "Aguacate",
           "cantidad": "1/2 unidad",
           "cantidadMetrica": 0.5,
           "unidadMetrica": "unidades",
@@ -148,6 +157,7 @@
         },
         {
           "nombre": "Tomates Cherry",
+          "subcategoria": "Tomate",
           "cantidad": "1/2 taza (75g)",
           "cantidadMetrica": 75,
           "unidadMetrica": "g",
@@ -159,6 +169,7 @@
         },
         {
           "nombre": "Pepino",
+          "subcategoria": "Pepino",
           "cantidad": "1/2 unidad",
           "cantidadMetrica": 0.5,
           "unidadMetrica": "unidades",
@@ -170,6 +181,7 @@
         },
         {
           "nombre": "Aceite de Oliva Virgen Extra",
+          "subcategoria": "Aceite de Oliva",
           "cantidad": "1 cucharada (15ml)",
           "cantidadMetrica": 15,
           "unidadMetrica": "ml",
@@ -183,6 +195,7 @@
       "ingredientesOpcionales": [
         {
           "nombre": "Lentejas cocidas",
+          "subcategoria": "Lentejas",
           "cantidad": "1/3 taza (65g)",
           "cantidadMetrica": 65,
           "unidadMetrica": "g",
@@ -223,6 +236,7 @@
       "ingredientes": [
         {
           "nombre": "Carne de Res Magra",
+          "subcategoria": "Carne de Res",
           "cantidad": "150g, en tiras finas",
           "cantidadMetrica": 150,
           "unidadMetrica": "g",
@@ -234,6 +248,7 @@
         },
         {
           "nombre": "Brócoli",
+          "subcategoria": "Brócoli",
           "cantidad": "1 taza (90g), en floretes",
           "cantidadMetrica": 90,
           "unidadMetrica": "g",
@@ -245,6 +260,7 @@
         },
         {
           "nombre": "Salsa de Soja (baja en sodio)",
+          "subcategoria": "Salsa de Soja",
           "cantidad": "1 cucharada (15ml)",
           "cantidadMetrica": 15,
           "unidadMetrica": "ml",
@@ -256,6 +272,7 @@
         },
         {
           "nombre": "Jengibre Fresco",
+          "subcategoria": "Jengibre",
           "cantidad": "1 cucharadita (5g), rallado",
           "cantidadMetrica": 5,
           "unidadMetrica": "g",
@@ -269,6 +286,7 @@
       "ingredientesOpcionales": [
         {
           "nombre": "Arroz de Coliflor",
+          "subcategoria": "Coliflor",
           "cantidad": "1 taza (100g)",
           "cantidadMetrica": 100,
           "unidadMetrica": "g",
@@ -309,6 +327,7 @@
       "ingredientes": [
         {
           "nombre": "Filete de Pescado Blanco",
+          "subcategoria": "Pescado Blanco",
           "cantidad": "1 filete (150g)",
           "cantidadMetrica": 150,
           "unidadMetrica": "g",
@@ -320,6 +339,7 @@
         },
         {
           "nombre": "Hojas de Lechuga Romana",
+          "subcategoria": "Lechuga",
           "cantidad": "4 hojas grandes",
           "cantidadMetrica": 4,
           "unidadMetrica": "unidades",
@@ -331,6 +351,7 @@
         },
         {
           "nombre": "Tomate",
+          "subcategoria": "Tomate",
           "cantidad": "1/2 unidad",
           "cantidadMetrica": 0.5,
           "unidadMetrica": "unidades",
@@ -342,6 +363,7 @@
         },
         {
           "nombre": "Yogur Griego Natural",
+          "subcategoria": "Yogur Griego",
           "cantidad": "2 cucharadas (30g)",
           "cantidadMetrica": 30,
           "unidadMetrica": "g",
@@ -355,6 +377,7 @@
       "ingredientesOpcionales": [
         {
           "nombre": "Frijoles Negros cocidos",
+          "subcategoria": "Frijoles Negros",
           "cantidad": "1/2 taza (85g)",
           "cantidadMetrica": 85,
           "unidadMetrica": "g",
@@ -396,6 +419,7 @@
       "ingredientes": [
         {
           "nombre": "Pollo Molido",
+          "subcategoria": "Pollo",
           "cantidad": "180g",
           "cantidadMetrica": 180,
           "unidadMetrica": "g",
@@ -407,6 +431,7 @@
         },
         {
           "nombre": "Calabacín",
+          "subcategoria": "Calabacín",
           "cantidad": "1 mediano",
           "cantidadMetrica": 1,
           "unidadMetrica": "unidades",
@@ -418,6 +443,7 @@
         },
         {
           "nombre": "Salsa de Tomate (natural)",
+          "subcategoria": "Salsa de Tomate",
           "cantidad": "1 taza (240ml)",
           "cantidadMetrica": 240,
           "unidadMetrica": "ml",
@@ -431,6 +457,7 @@
       "ingredientesOpcionales": [
         {
           "nombre": "Pan integral",
+          "subcategoria": "Pan Integral",
           "cantidad": "1 rebanada",
           "cantidadMetrica": 1,
           "unidadMetrica": "unidades",
@@ -471,6 +498,7 @@
       "ingredientes": [
         {
           "nombre": "Pechuga de Pollo",
+          "subcategoria": "Pollo",
           "cantidad": "1 filete (150g)",
           "cantidadMetrica": 150,
           "unidadMetrica": "g",
@@ -482,6 +510,7 @@
         },
         {
           "nombre": "Champiñones",
+          "subcategoria": "Champiñones",
           "cantidad": "1 taza (100g), laminados",
           "cantidadMetrica": 100,
           "unidadMetrica": "g",
@@ -493,6 +522,7 @@
         },
         {
           "nombre": "Rúcula",
+          "subcategoria": "Rúcula",
           "cantidad": "2 tazas (40g)",
           "cantidadMetrica": 40,
           "unidadMetrica": "g",
@@ -504,6 +534,7 @@
         },
         {
           "nombre": "Ajo",
+          "subcategoria": "Ajo",
           "cantidad": "2 dientes",
           "cantidadMetrica": 2,
           "unidadMetrica": "unidades",
@@ -517,6 +548,7 @@
       "ingredientesOpcionales": [
         {
           "nombre": "Garbanzos tostados",
+          "subcategoria": "Garbanzos",
           "cantidad": "1/2 taza (80g)",
           "cantidadMetrica": 80,
           "unidadMetrica": "g",
@@ -558,6 +590,7 @@
       "ingredientes": [
         {
           "nombre": "Chuleta de Cerdo magra",
+          "subcategoria": "Cerdo",
           "cantidad": "1 chuleta (180g)",
           "cantidadMetrica": 180,
           "unidadMetrica": "g",
@@ -569,6 +602,7 @@
         },
         {
           "nombre": "Coliflor",
+          "subcategoria": "Coliflor",
           "cantidad": "1.5 tazas (150g), en floretes",
           "cantidadMetrica": 150,
           "unidadMetrica": "g",
@@ -580,6 +614,7 @@
         },
         {
           "nombre": "Ajo",
+          "subcategoria": "Ajo",
           "cantidad": "1 diente",
           "cantidadMetrica": 1,
           "unidadMetrica": "unidades",
@@ -593,6 +628,7 @@
       "ingredientesOpcionales": [
         {
           "nombre": "Calabaza asada",
+          "subcategoria": "Calabaza",
           "cantidad": "1/2 taza (100g), en cubos",
           "cantidadMetrica": 100,
           "unidadMetrica": "g",
@@ -632,6 +668,7 @@
       "ingredientes": [
         {
           "nombre": "Pechuga de Pollo",
+          "subcategoria": "Pollo",
           "cantidad": "1 filete (180g)",
           "cantidadMetrica": 180,
           "unidadMetrica": "g",
@@ -643,6 +680,7 @@
         },
         {
           "nombre": "Champiñones",
+          "subcategoria": "Champiñones",
           "cantidad": "1 taza (100g), laminados",
           "cantidadMetrica": 100,
           "unidadMetrica": "g",
@@ -654,6 +692,7 @@
         },
         {
           "nombre": "Espinacas frescas",
+          "subcategoria": "Espinacas",
           "cantidad": "2 tazas (60g)",
           "cantidadMetrica": 60,
           "unidadMetrica": "g",
@@ -665,6 +704,7 @@
         },
         {
           "nombre": "Crema de leche (Nata)",
+          "subcategoria": "Crema de Leche",
           "cantidad": "1/4 taza (60ml)",
           "cantidadMetrica": 60,
           "unidadMetrica": "ml",
@@ -678,6 +718,7 @@
       "ingredientesOpcionales": [
         {
           "nombre": "Pan integral",
+          "subcategoria": "Pan Integral",
           "cantidad": "1 rebanada",
           "cantidadMetrica": 1,
           "unidadMetrica": "unidades",
@@ -718,6 +759,7 @@
       "ingredientes": [
         {
           "nombre": "Atún en agua, escurrido",
+          "subcategoria": "Atún",
           "cantidad": "1 lata (120g)",
           "cantidadMetrica": 120,
           "unidadMetrica": "g",
@@ -729,6 +771,7 @@
         },
         {
           "nombre": "Garbanzos cocidos",
+          "subcategoria": "Garbanzos",
           "cantidad": "1/2 taza (80g)",
           "cantidadMetrica": 80,
           "unidadMetrica": "g",
@@ -740,6 +783,7 @@
         },
         {
           "nombre": "Judías verdes, cocidas",
+          "subcategoria": "Judías Verdes",
           "cantidad": "1/2 taza (60g)",
           "cantidadMetrica": 60,
           "unidadMetrica": "g",
@@ -753,6 +797,7 @@
       "ingredientesOpcionales": [
         {
           "nombre": "Patatas baby, cocidas",
+          "subcategoria": "Patata",
           "cantidad": "5 unidades",
           "cantidadMetrica": 5,
           "unidadMetrica": "unidades",
@@ -791,6 +836,7 @@
       "ingredientes": [
         {
           "nombre": "Pechuga de Pollo",
+          "subcategoria": "Pollo",
           "cantidad": "1 filete (180g)",
           "cantidadMetrica": 180,
           "unidadMetrica": "g",
@@ -802,6 +848,7 @@
         },
         {
           "nombre": "Crema de leche (Nata)",
+          "subcategoria": "Crema de Leche",
           "cantidad": "1/4 taza (60ml)",
           "cantidadMetrica": 60,
           "unidadMetrica": "ml",
@@ -813,6 +860,7 @@
         },
         {
           "nombre": "Espinacas frescas",
+          "subcategoria": "Espinacas",
           "cantidad": "2 tazas (60g)",
           "cantidadMetrica": 60,
           "unidadMetrica": "g",
@@ -824,6 +872,7 @@
         },
         {
           "nombre": "Tomates secos en aceite",
+          "subcategoria": "Tomate Seco",
           "cantidad": "4 unidades, picados",
           "cantidadMetrica": 4,
           "unidadMetrica": "unidades",
@@ -837,6 +886,7 @@
       "ingredientesOpcionales": [
         {
           "nombre": "Pasta integral",
+          "subcategoria": "Pasta",
           "cantidad": "1/2 taza (75g), cocida",
           "cantidadMetrica": 75,
           "unidadMetrica": "g",
@@ -877,6 +927,7 @@
       "ingredientes": [
         {
           "nombre": "Carne Molida Magra",
+          "subcategoria": "Carne de Res",
           "cantidad": "180g",
           "cantidadMetrica": 180,
           "unidadMetrica": "g",
@@ -888,6 +939,7 @@
         },
         {
           "nombre": "Loncha de Queso",
+          "subcategoria": "Queso",
           "cantidad": "1 unidad",
           "cantidadMetrica": 1,
           "unidadMetrica": "unidades",
@@ -901,6 +953,7 @@
       "ingredientesOpcionales": [
         {
           "nombre": "Boniato (Camote)",
+          "subcategoria": "Boniato",
           "cantidad": "1 pequeño (150g)",
           "cantidadMetrica": 150,
           "unidadMetrica": "g",
@@ -941,6 +994,7 @@
       "ingredientes": [
         {
           "nombre": "Pollo Molido",
+          "subcategoria": "Pollo",
           "cantidad": "200g",
           "cantidadMetrica": 200,
           "unidadMetrica": "g",
@@ -952,6 +1006,7 @@
         },
         {
           "nombre": "Queso Mozzarella, rallado",
+          "subcategoria": "Queso Mozzarella",
           "cantidad": "3/4 taza (85g)",
           "cantidadMetrica": 85,
           "unidadMetrica": "g",
@@ -963,6 +1018,7 @@
         },
         {
           "nombre": "Salsa de tomate (sin azúcar)",
+          "subcategoria": "Salsa de Tomate",
           "cantidad": "3 cucharadas (45ml)",
           "cantidadMetrica": 45,
           "unidadMetrica": "ml",
@@ -976,6 +1032,7 @@
       "ingredientesOpcionales": [
         {
           "nombre": "Frutos Rojos con Yogur",
+          "subcategoria": "Frutos Rojos",
           "cantidad": "1 taza",
           "cantidadMetrica": 1,
           "unidadMetrica": "unidades",
@@ -1016,6 +1073,7 @@
       "ingredientes": [
         {
           "nombre": "Piezas de Pollo (muslo)",
+          "subcategoria": "Pollo",
           "cantidad": "200g",
           "cantidadMetrica": 200,
           "unidadMetrica": "g",
@@ -1027,6 +1085,7 @@
         },
         {
           "nombre": "Coles de Bruselas",
+          "subcategoria": "Coles de Bruselas",
           "cantidad": "1 taza (90g)",
           "cantidadMetrica": 90,
           "unidadMetrica": "g",
@@ -1038,6 +1097,7 @@
         },
         {
           "nombre": "Pimiento Rojo",
+          "subcategoria": "Pimiento",
           "cantidad": "1/2 unidad",
           "cantidadMetrica": 0.5,
           "unidadMetrica": "unidades",
@@ -1051,6 +1111,7 @@
       "ingredientesOpcionales": [
         {
           "nombre": "Puré de Coliflor y Zanahoria",
+          "subcategoria": "Puré de Vegetales",
           "cantidad": "1 taza",
           "cantidadMetrica": 1,
           "unidadMetrica": "unidades",
@@ -1091,6 +1152,7 @@
       "ingredientes": [
         {
           "nombre": "Filete de Pescado Blanco",
+          "subcategoria": "Pescado Blanco",
           "cantidad": "1 filete (180g)",
           "cantidadMetrica": 180,
           "unidadMetrica": "g",
@@ -1102,6 +1164,7 @@
         },
         {
           "nombre": "Tomates Cherry",
+          "subcategoria": "Tomate",
           "cantidad": "1 taza (150g)",
           "cantidadMetrica": 150,
           "unidadMetrica": "g",
@@ -1113,6 +1176,7 @@
         },
         {
           "nombre": "Aceitunas Kalamata",
+          "subcategoria": "Aceitunas",
           "cantidad": "10 unidades (40g)",
           "cantidadMetrica": 40,
           "unidadMetrica": "g",
@@ -1126,6 +1190,7 @@
       "ingredientesOpcionales": [
         {
           "nombre": "Arroz salvaje cocido",
+          "subcategoria": "Arroz Salvaje",
           "cantidad": "1/2 taza (82.5g)",
           "cantidadMetrica": 82.5,
           "unidadMetrica": "g",
@@ -1148,6 +1213,304 @@
         "proteinasTotales": 32.8,
         "grasasTotales": 12.3,
         "carbohidratosTotales": 7
+      }
+    },
+    {
+      "id": "bistec-pimienta-15",
+      "nombre": "Bistec a la Pimienta con Champiñones Salteados",
+      "tiempoPreparacionAproximado": "20-25 minutos",
+      "dificultad": "Fácil",
+      "tipoDeComida": "Cena",
+      "etiquetas": [
+        "Sin Gluten"
+      ],
+      "utensilios": [
+        "sartén grande"
+      ],
+      "ingredientes": [
+        {
+          "nombre": "Bistec de res (sirloin o lomo)",
+          "subcategoria": "Carne de Res",
+          "cantidad": "1 filete (180g)",
+          "cantidadMetrica": 180,
+          "unidadMetrica": "g",
+          "categoria": "Carnes y Aves",
+          "caloriasAproximadas": 330,
+          "proteinasAproximadasGramos": 45,
+          "grasasAproximadasGramos": 16,
+          "carbohidratosAproximadosGramos": 0
+        },
+        {
+          "nombre": "Champiñones",
+          "subcategoria": "Champiñones",
+          "cantidad": "1 taza (100g), laminados",
+          "cantidadMetrica": 100,
+          "unidadMetrica": "g",
+          "categoria": "Vegetales",
+          "caloriasAproximadas": 22,
+          "proteinasAproximadasGramos": 3,
+          "grasasAproximadasGramos": 0,
+          "carbohidratosAproximadosGramos": 2
+        },
+        {
+          "nombre": "Yogur Griego Natural (o crema)",
+          "subcategoria": "Yogur Griego",
+          "cantidad": "2 cucharadas (30g)",
+          "cantidadMetrica": 30,
+          "unidadMetrica": "g",
+          "categoria": "Lácteos",
+          "caloriasAproximadas": 30,
+          "proteinasAproximadasGramos": 3,
+          "grasasAproximadasGramos": 1,
+          "carbohidratosAproximadosGramos": 2
+        },
+        {
+          "nombre": "Aceite de Oliva",
+          "subcategoria": "Aceite de Oliva",
+          "cantidad": "1 cucharadita (5ml)",
+          "cantidadMetrica": 5,
+          "unidadMetrica": "ml",
+          "categoria": "Aceites y Grasas",
+          "caloriasAproximadas": 45,
+          "proteinasAproximadasGramos": 0,
+          "grasasAproximadasGramos": 5,
+          "carbohidratosAproximadosGramos": 0
+        },
+        {
+          "nombre": "Pimienta negra recién molida",
+          "subcategoria": "Pimienta",
+          "cantidad": "1 cucharadita (5g)",
+          "cantidadMetrica": 5,
+          "unidadMetrica": "g",
+          "categoria": "Hierbas y Especias",
+          "caloriasAproximadas": 5,
+          "proteinasAproximadasGramos": 0,
+          "grasasAproximadasGramos": 0,
+          "carbohidratosAproximadosGramos": 1
+        }
+      ],
+      "ingredientesOpcionales": [
+        {
+          "nombre": "Puré de Coliflor",
+          "subcategoria": "Coliflor",
+          "cantidad": "1 taza (150g)",
+          "cantidadMetrica": 150,
+          "unidadMetrica": "g",
+          "categoria": "Vegetales",
+          "carbohidratosAproximadosGramos": 8
+        }
+      ],
+      "instrucciones": [
+        "Sazona el bistec generosamente por ambos lados con sal y pimienta negra recién molida, presionando las especias contra la carne.",
+        "Calienta el aceite en una sartén a fuego medio-alto. Cocina el bistec de 3 a 5 minutos por lado para un término medio.",
+        "Retira el bistec de la sartén y déjalo reposar. En la misma sartén, añade los champiñones y saltea hasta que se doren.",
+        "Baja el fuego, incorpora el yogur griego o crema y un poco del jugo que soltó el bistec. Remueve para crear una salsa cremosa.",
+        "Sirve el bistec bañado en la salsa de champiñones."
+      ],
+      "consejosDelChef": [
+        "Para un sabor más intenso, añade un chorrito de caldo de res a la salsa mientras se reduce.",
+        "Asegúrate de que la sartén esté bien caliente antes de añadir el bistec para conseguir un sellado perfecto."
+      ],
+      "resumenNutricional": {
+        "caloriasTotales": 432,
+        "proteinasTotales": 51,
+        "grasasTotales": 22,
+        "carbohidratosTotales": 5
+      }
+    },
+    {
+      "id": "ropa-vieja-rapida-16",
+      "nombre": "Ropa Vieja (Versión Rápida en Sartén)",
+      "tiempoPreparacionAproximado": "30-35 minutos",
+      "dificultad": "Fácil",
+      "tipoDeComida": "Almuerzo",
+      "etiquetas": [
+        "Sin Gluten",
+        "Sin Lácteos"
+      ],
+      "utensilios": [
+        "sartén grande con tapa"
+      ],
+      "ingredientes": [
+        {
+          "nombre": "Falda de res",
+          "subcategoria": "Carne de Res",
+          "cantidad": "180g, en tiras muy finas",
+          "cantidadMetrica": 180,
+          "unidadMetrica": "g",
+          "categoria": "Carnes y Aves",
+          "caloriasAproximadas": 350,
+          "proteinasAproximadasGramos": 36,
+          "grasasAproximadasGramos": 22,
+          "carbohidratosAproximadosGramos": 0
+        },
+        {
+          "nombre": "Pimiento (rojo y verde)",
+          "subcategoria": "Pimiento",
+          "cantidad": "1 taza (150g), en julianas",
+          "cantidadMetrica": 150,
+          "unidadMetrica": "g",
+          "categoria": "Vegetales",
+          "caloriasAproximadas": 45,
+          "proteinasAproximadasGramos": 1.5,
+          "grasasAproximadasGramos": 0,
+          "carbohidratosAproximadosGramos": 9
+        },
+        {
+          "nombre": "Cebolla",
+          "subcategoria": "Cebolla",
+          "cantidad": "1/2 unidad, en julianas",
+          "cantidadMetrica": 0.5,
+          "unidadMetrica": "unidades",
+          "categoria": "Vegetales",
+          "caloriasAproximadas": 20,
+          "proteinasAproximadasGramos": 1,
+          "grasasAproximadasGramos": 0,
+          "carbohidratosAproximadosGramos": 5
+        },
+        {
+          "nombre": "Salsa de Tomate (natural)",
+          "subcategoria": "Salsa de Tomate",
+          "cantidad": "1/2 taza (120ml)",
+          "cantidadMetrica": 120,
+          "unidadMetrica": "ml",
+          "categoria": "Despensa",
+          "caloriasAproximadas": 35,
+          "proteinasAproximadasGramos": 1.5,
+          "grasasAproximadasGramos": 0,
+          "carbohidratosAproximadosGramos": 4
+        },
+        {
+          "nombre": "Aceite de Aguacate",
+          "subcategoria": "Aceite de Aguacate",
+          "cantidad": "1 cucharada (15ml)",
+          "cantidadMetrica": 15,
+          "unidadMetrica": "ml",
+          "categoria": "Aceites y Grasas",
+          "caloriasAproximadas": 120,
+          "proteinasAproximadasGramos": 0,
+          "grasasAproximadasGramos": 14,
+          "carbohidratosAproximadosGramos": 0
+        }
+      ],
+      "ingredientesOpcionales": [
+        {
+          "nombre": "Arroz de Coliflor",
+          "subcategoria": "Coliflor",
+          "cantidad": "1 taza (100g)",
+          "cantidadMetrica": 100,
+          "unidadMetrica": "g",
+          "categoria": "Vegetales",
+          "carbohidratosAproximadosGramos": 5
+        }
+      ],
+      "instrucciones": [
+        "Sazona las tiras de res con sal, comino y orégano.",
+        "Calienta el aceite en una sartén grande a fuego alto y sella rápidamente la carne hasta que se dore. Retírala de la sartén.",
+        "En la misma sartén, sofríe la cebolla y los pimientos hasta que estén tiernos, unos 5-7 minutos.",
+        "Vuelve a incorporar la carne a la sartén. Añade la salsa de tomate y media taza de agua o caldo de res.",
+        "Baja el fuego, tapa la sartén y cocina a fuego lento durante 15-20 minutos para que los sabores se integren y la carne quede tierna."
+      ],
+      "consejosDelChef": [
+        "Añadir unas aceitunas verdes picadas al guiso le da un toque salino delicioso y muy tradicional.",
+        "Corta la carne en contra de la fibra para asegurar que quede lo más tierna posible."
+      ],
+      "resumenNutricional": {
+        "caloriasTotales": 570,
+        "proteinasTotales": 40,
+        "grasasTotales": 36,
+        "carbohidratosTotales": 18
+      }
+    },
+    {
+      "id": "albondigas-chipotle-17",
+      "nombre": "Albóndigas de Res en Salsa de Chipotle",
+      "tiempoPreparacionAproximado": "25-30 minutos",
+      "dificultad": "Fácil",
+      "tipoDeComida": "Almuerzo",
+      "etiquetas": [
+        "Sin Gluten"
+      ],
+      "utensilios": [
+        "sartén u olla mediana"
+      ],
+      "ingredientes": [
+        {
+          "nombre": "Carne Molida de Res (90/10)",
+          "subcategoria": "Carne de Res",
+          "cantidad": "180g",
+          "cantidadMetrica": 180,
+          "unidadMetrica": "g",
+          "categoria": "Carnes y Aves",
+          "caloriasAproximadas": 360,
+          "proteinasAproximadasGramos": 36,
+          "grasasAproximadasGramos": 24,
+          "carbohidratosAproximadosGramos": 0
+        },
+        {
+          "nombre": "Salsa de Tomate (natural)",
+          "subcategoria": "Salsa de Tomate",
+          "cantidad": "1/2 taza (120ml)",
+          "cantidadMetrica": 120,
+          "unidadMetrica": "ml",
+          "categoria": "Despensa",
+          "caloriasAproximadas": 35,
+          "proteinasAproximadasGramos": 1.5,
+          "grasasAproximadasGramos": 0,
+          "carbohidratosAproximadosGramos": 4
+        },
+        {
+          "nombre": "Chipotles en Adobo",
+          "subcategoria": "Chipotle",
+          "cantidad": "1 cucharada (15g), picado",
+          "cantidadMetrica": 15,
+          "unidadMetrica": "g",
+          "categoria": "Despensa",
+          "caloriasAproximadas": 10,
+          "proteinasAproximadasGramos": 0,
+          "grasasAproximadasGramos": 0,
+          "carbohidratosAproximadosGramos": 2
+        },
+        {
+          "nombre": "Cebolla",
+          "subcategoria": "Cebolla",
+          "cantidad": "1/4 unidad, picada fina",
+          "cantidadMetrica": 0.25,
+          "unidadMetrica": "unidades",
+          "categoria": "Vegetales",
+          "caloriasAproximadas": 10,
+          "proteinasAproximadasGramos": 0.5,
+          "grasasAproximadasGramos": 0,
+          "carbohidratosAproximadosGramos": 2
+        }
+      ],
+      "ingredientesOpcionales": [
+        {
+          "nombre": "Queso Cotija (o Feta)",
+          "subcategoria": "Queso Cotija/Feta",
+          "cantidad": "2 cucharadas (30g), desmoronado",
+          "cantidadMetrica": 30,
+          "unidadMetrica": "g",
+          "categoria": "Lácteos",
+          "carbohidratosAproximadosGramos": 1
+        }
+      ],
+      "instrucciones": [
+        "En un bol, mezcla la carne molida con la mitad de la cebolla picada, sal y pimienta. Forma 4-5 albóndigas.",
+        "Dora las albóndigas en una sartén caliente por todos lados. Retíralas de la sartén.",
+        "En la misma sartén, sofríe el resto de la cebolla. Añade la salsa de tomate, el chipotle picado y media taza de agua.",
+        "Cuando la salsa hierva, regresa las albóndigas a la sartén. Baja el fuego, tapa y cocina por 15 minutos.",
+        "Sirve las albóndigas calientes, bañadas en su salsa. Si lo deseas, espolvorea queso por encima."
+      ],
+      "consejosDelChef": [
+        "Si prefieres una salsa más suave y cremosa, puedes licuar la salsa de tomate con el chipotle y un poco de yogur griego antes de cocinarla.",
+        "Estas albóndigas son perfectas para preparar en lote y congelar para una comida rápida entre semana."
+      ],
+      "resumenNutricional": {
+        "caloriasTotales": 415,
+        "proteinasTotales": 38,
+        "grasasTotales": 24,
+        "carbohidratosTotales": 8
       }
     }
   ]
